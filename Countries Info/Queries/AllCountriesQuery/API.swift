@@ -4,11 +4,11 @@
 import Apollo
 import Foundation
 
-public final class MyCountryQueryQuery: GraphQLQuery {
+public final class AllCountriesQuery: GraphQLQuery {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
     """
-    query MyCountryQuery {
+    query AllCountries {
       Country {
         __typename
         name
@@ -45,7 +45,7 @@ public final class MyCountryQueryQuery: GraphQLQuery {
     }
     """
 
-  public let operationName: String = "MyCountryQuery"
+  public let operationName: String = "AllCountries"
 
   public init() {
   }
