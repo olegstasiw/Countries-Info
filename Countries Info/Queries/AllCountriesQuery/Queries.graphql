@@ -1,0 +1,27 @@
+query AllCountries {
+  Country {
+    name
+    capital
+    subregion {
+      region {
+        name
+      }
+    }
+    population
+    currencies {
+      name
+    }
+    officialLanguages {
+      name
+    }
+    timezones {
+      name
+    }
+    callingCodes {
+      name
+    }
+    flag {
+      svgFile
+    }
+  }
+}
