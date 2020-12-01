@@ -13,7 +13,7 @@ class ApolloManager {
     static let shared = ApolloManager()
     
     private let url = URL(string: "https://countries-274616.ew.r.appspot.com/")
-    lazy var apollo = ApolloClient(url: url!)
+    private lazy var apollo = ApolloClient(url: url!)
     
     func fetch<Query: GraphQLQuery, T: Codable>(query: Query, type: T.Type, completion: @escaping(T) -> Void) {
         apollo.fetch(query: query) { result in
