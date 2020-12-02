@@ -8,13 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		048D0348256B9235006FE35B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048D0347256B9235006FE35B /* AppDelegate.swift */; };
-		048D034A256B9235006FE35B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048D0349256B9235006FE35B /* SceneDelegate.swift */; };
-		048D034C256B9235006FE35B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048D034B256B9235006FE35B /* ViewController.swift */; };
 		048D034F256B9235006FE35B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 048D034D256B9235006FE35B /* Main.storyboard */; };
 		048D0351256B9237006FE35B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 048D0350256B9237006FE35B /* Assets.xcassets */; };
 		048D0354256B9237006FE35B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 048D0352256B9237006FE35B /* LaunchScreen.storyboard */; };
+		3114B0EC2577A5B6009BAB2C /* DependecyInjectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3114B0EB2577A5B6009BAB2C /* DependecyInjectionManager.swift */; };
+		3114B0EF2577A5D1009BAB2C /* CountriesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3114B0EE2577A5D1009BAB2C /* CountriesListViewModel.swift */; };
+		3114B0F32577A62B009BAB2C /* CountryCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3114B0F22577A62B009BAB2C /* CountryCollectionViewCellViewModel.swift */; };
+		311D4A852577A6EA0095599E /* CountryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311D4A842577A6EA0095599E /* CountryCollectionViewCell.swift */; };
 		31510C2C2576686B00780ECD /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31510C2B2576686B00780ECD /* Country.swift */; };
 		31510C302576862700780ECD /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31510C2F2576862700780ECD /* API.swift */; };
+		316662032577A16100FBD84F /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 316662022577A16100FBD84F /* Swinject */; };
+		3194F6892577BA8C00FA6398 /* CountriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194F6882577BA8C00FA6398 /* CountriesListViewController.swift */; };
+		3194F6922577FFFF00FA6398 /* ApolloAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194F6912577FFFF00FA6398 /* ApolloAssembly.swift */; };
+		3194F6962578000A00FA6398 /* ViewControllerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194F6952578000A00FA6398 /* ViewControllerAssembly.swift */; };
 		31D04932256FE8E2005C82B2 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 31D04931256FE8E2005C82B2 /* Apollo */; };
 		31D04935256FE998005C82B2 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 31D04934256FE998005C82B2 /* schema.json */; };
 		31D04938256FE9B4005C82B2 /* Queries.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 31D04937256FE9B4005C82B2 /* Queries.graphql */; };
@@ -25,14 +31,19 @@
 /* Begin PBXFileReference section */
 		048D0344256B9235006FE35B /* Countries Info.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Countries Info.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		048D0347256B9235006FE35B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		048D0349256B9235006FE35B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		048D034B256B9235006FE35B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		048D034E256B9235006FE35B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		048D0350256B9237006FE35B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		048D0353256B9237006FE35B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		048D0355256B9237006FE35B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3114B0EB2577A5B6009BAB2C /* DependecyInjectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependecyInjectionManager.swift; sourceTree = "<group>"; };
+		3114B0EE2577A5D1009BAB2C /* CountriesListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountriesListViewModel.swift; sourceTree = "<group>"; };
+		3114B0F22577A62B009BAB2C /* CountryCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		311D4A842577A6EA0095599E /* CountryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCollectionViewCell.swift; sourceTree = "<group>"; };
 		31510C2B2576686B00780ECD /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		31510C2F2576862700780ECD /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		3194F6882577BA8C00FA6398 /* CountriesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListViewController.swift; sourceTree = "<group>"; };
+		3194F6912577FFFF00FA6398 /* ApolloAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloAssembly.swift; sourceTree = "<group>"; };
+		3194F6952578000A00FA6398 /* ViewControllerAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerAssembly.swift; sourceTree = "<group>"; };
 		31D04934256FE998005C82B2 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		31D04937256FE9B4005C82B2 /* Queries.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Queries.graphql; sourceTree = "<group>"; };
 		31D0494B256FF21C005C82B2 /* ApolloManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloManager.swift; sourceTree = "<group>"; };
@@ -45,6 +56,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31D04932256FE8E2005C82B2 /* Apollo in Frameworks */,
+				316662032577A16100FBD84F /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,7 +84,9 @@
 			children = (
 				31D0494F256FF3C9005C82B2 /* Model */,
 				31D04947256FF16E005C82B2 /* ViewControllers */,
+				316661F0257794F500FBD84F /* ViewModels */,
 				31D0494A256FF1A9005C82B2 /* Managers */,
+				3194F6902577FFC300FA6398 /* Asseblies */,
 				31D04944256FF11E005C82B2 /* Supporting files */,
 				31D04949256FF17B005C82B2 /* Storyboards */,
 				31510C232576665700780ECD /* Queries */,
@@ -98,11 +112,28 @@
 			path = AllCountriesQuery;
 			sourceTree = "<group>";
 		};
+		316661F0257794F500FBD84F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				3114B0EE2577A5D1009BAB2C /* CountriesListViewModel.swift */,
+				3114B0F22577A62B009BAB2C /* CountryCollectionViewCellViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		3194F6902577FFC300FA6398 /* Asseblies */ = {
+			isa = PBXGroup;
+			children = (
+				3194F6912577FFFF00FA6398 /* ApolloAssembly.swift */,
+				3194F6952578000A00FA6398 /* ViewControllerAssembly.swift */,
+			);
+			path = Asseblies;
+			sourceTree = "<group>";
+		};
 		31D04944256FF11E005C82B2 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
 				048D0347256B9235006FE35B /* AppDelegate.swift */,
-				048D0349256B9235006FE35B /* SceneDelegate.swift */,
 				048D0350256B9237006FE35B /* Assets.xcassets */,
 				048D0355256B9237006FE35B /* Info.plist */,
 			);
@@ -112,7 +143,8 @@
 		31D04947256FF16E005C82B2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				048D034B256B9235006FE35B /* ViewController.swift */,
+				3194F6882577BA8C00FA6398 /* CountriesListViewController.swift */,
+				311D4A842577A6EA0095599E /* CountryCollectionViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -130,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				31D0494B256FF21C005C82B2 /* ApolloManager.swift */,
+				3114B0EB2577A5B6009BAB2C /* DependecyInjectionManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -162,6 +195,7 @@
 			name = "Countries Info";
 			packageProductDependencies = (
 				31D04931256FE8E2005C82B2 /* Apollo */,
+				316662022577A16100FBD84F /* Swinject */,
 			);
 			productName = "Countries Info";
 			productReference = 048D0344256B9235006FE35B /* Countries Info.app */;
@@ -192,6 +226,7 @@
 			mainGroup = 048D033B256B9234006FE35B;
 			packageReferences = (
 				31D04930256FE8E2005C82B2 /* XCRemoteSwiftPackageReference "apollo-ios" */,
+				316662012577A16100FBD84F /* XCRemoteSwiftPackageReference "Swinject" */,
 			);
 			productRefGroup = 048D0345256B9235006FE35B /* Products */;
 			projectDirPath = "";
@@ -245,12 +280,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				31510C2C2576686B00780ECD /* Country.swift in Sources */,
+				311D4A852577A6EA0095599E /* CountryCollectionViewCell.swift in Sources */,
+				3194F6962578000A00FA6398 /* ViewControllerAssembly.swift in Sources */,
 				31D04951256FF417005C82B2 /* AllCountries.swift in Sources */,
-				048D034C256B9235006FE35B /* ViewController.swift in Sources */,
+				3194F6922577FFFF00FA6398 /* ApolloAssembly.swift in Sources */,
 				048D0348256B9235006FE35B /* AppDelegate.swift in Sources */,
 				31D0494C256FF21C005C82B2 /* ApolloManager.swift in Sources */,
-				048D034A256B9235006FE35B /* SceneDelegate.swift in Sources */,
+				3114B0EF2577A5D1009BAB2C /* CountriesListViewModel.swift in Sources */,
+				3114B0F32577A62B009BAB2C /* CountryCollectionViewCellViewModel.swift in Sources */,
+				3194F6892577BA8C00FA6398 /* CountriesListViewController.swift in Sources */,
 				31510C302576862700780ECD /* API.swift in Sources */,
+				3114B0EC2577A5B6009BAB2C /* DependecyInjectionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +494,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		316662012577A16100FBD84F /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.7.1;
+			};
+		};
 		31D04930256FE8E2005C82B2 /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
@@ -465,6 +513,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		316662022577A16100FBD84F /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 316662012577A16100FBD84F /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
 		31D04931256FE8E2005C82B2 /* Apollo */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 31D04930256FE8E2005C82B2 /* XCRemoteSwiftPackageReference "apollo-ios" */;
