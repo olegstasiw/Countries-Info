@@ -13,7 +13,7 @@ class ViewControllerAssembly: Assembly {
         container.register(CountriesListViewController.self) { r in
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let controller = storyboard.instantiateViewController(withIdentifier: "CountriesListViewController") as! CountriesListViewController
-            controller.viewModel = CountriesListViewModel(apollo: DependecyInjectionManager.shared.assembler.resolver.resolve(ApolloManager.self)!)
+            controller.viewModel = CountriesListViewModel(apollo: r.resolve(ApolloManager.self)!)
             return controller
         }
     }
