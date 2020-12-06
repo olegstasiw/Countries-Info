@@ -14,19 +14,36 @@
 		3114B0EC2577A5B6009BAB2C /* DependecyInjectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3114B0EB2577A5B6009BAB2C /* DependecyInjectionManager.swift */; };
 		3114B0EF2577A5D1009BAB2C /* CountriesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3114B0EE2577A5D1009BAB2C /* CountriesListViewModel.swift */; };
 		3114B0F32577A62B009BAB2C /* CountryCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3114B0F22577A62B009BAB2C /* CountryCollectionViewCellViewModel.swift */; };
-		311D4A852577A6EA0095599E /* CountryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311D4A842577A6EA0095599E /* CountryCollectionViewCell.swift */; };
+		3150E7952578FCEF007EB537 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3150E7902578F94E007EB537 /* Roboto-Regular.ttf */; };
 		31510C2C2576686B00780ECD /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31510C2B2576686B00780ECD /* Country.swift */; };
 		31510C302576862700780ECD /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31510C2F2576862700780ECD /* API.swift */; };
+		315D49CD2579108800CADFC8 /* CountryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315D49CB2579108800CADFC8 /* CountryViewCell.swift */; };
+		315D49CE2579108800CADFC8 /* CountryViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 315D49CC2579108800CADFC8 /* CountryViewCell.xib */; };
 		316662032577A16100FBD84F /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 316662022577A16100FBD84F /* Swinject */; };
 		3194F6892577BA8C00FA6398 /* CountriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194F6882577BA8C00FA6398 /* CountriesListViewController.swift */; };
 		3194F6922577FFFF00FA6398 /* ApolloAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194F6912577FFFF00FA6398 /* ApolloAssembly.swift */; };
 		3194F6962578000A00FA6398 /* ViewControllerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194F6952578000A00FA6398 /* ViewControllerAssembly.swift */; };
+		31AEEA8E25792FF000313184 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AEEA8D25792FF000313184 /* ImageManager.swift */; };
+		31C8E08F257D4ED700415139 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C8E08E257D4ED700415139 /* UIView + Extension.swift */; };
 		31D04932256FE8E2005C82B2 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 31D04931256FE8E2005C82B2 /* Apollo */; };
 		31D04935256FE998005C82B2 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 31D04934256FE998005C82B2 /* schema.json */; };
 		31D04938256FE9B4005C82B2 /* Queries.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 31D04937256FE9B4005C82B2 /* Queries.graphql */; };
 		31D0494C256FF21C005C82B2 /* ApolloManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D0494B256FF21C005C82B2 /* ApolloManager.swift */; };
 		31D04951256FF417005C82B2 /* AllCountries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D04950256FF417005C82B2 /* AllCountries.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		31AEEAB42579582800313184 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		048D0344256B9235006FE35B /* Countries Info.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Countries Info.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,12 +55,17 @@
 		3114B0EB2577A5B6009BAB2C /* DependecyInjectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependecyInjectionManager.swift; sourceTree = "<group>"; };
 		3114B0EE2577A5D1009BAB2C /* CountriesListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountriesListViewModel.swift; sourceTree = "<group>"; };
 		3114B0F22577A62B009BAB2C /* CountryCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
-		311D4A842577A6EA0095599E /* CountryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCollectionViewCell.swift; sourceTree = "<group>"; };
+		3150E7902578F94E007EB537 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		31510C2B2576686B00780ECD /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		31510C2F2576862700780ECD /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		315D49CB2579108800CADFC8 /* CountryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewCell.swift; sourceTree = "<group>"; };
+		315D49CC2579108800CADFC8 /* CountryViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryViewCell.xib; sourceTree = "<group>"; };
 		3194F6882577BA8C00FA6398 /* CountriesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListViewController.swift; sourceTree = "<group>"; };
 		3194F6912577FFFF00FA6398 /* ApolloAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloAssembly.swift; sourceTree = "<group>"; };
 		3194F6952578000A00FA6398 /* ViewControllerAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerAssembly.swift; sourceTree = "<group>"; };
+		31AEEA8D25792FF000313184 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		31C8E08C257D37B200415139 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		31C8E08E257D4ED700415139 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 		31D04934256FE998005C82B2 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		31D04937256FE9B4005C82B2 /* Queries.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Queries.graphql; sourceTree = "<group>"; };
 		31D0494B256FF21C005C82B2 /* ApolloManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloManager.swift; sourceTree = "<group>"; };
@@ -68,6 +90,7 @@
 			children = (
 				048D0346256B9235006FE35B /* Countries Info */,
 				048D0345256B9235006FE35B /* Products */,
+				31AEEA982579548C00313184 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,10 +112,20 @@
 				3194F6902577FFC300FA6398 /* Asseblies */,
 				31D04944256FF11E005C82B2 /* Supporting files */,
 				31D04949256FF17B005C82B2 /* Storyboards */,
+				31C8E08D257D4EB700415139 /* Extentions */,
 				31510C232576665700780ECD /* Queries */,
 				31D04934256FE998005C82B2 /* schema.json */,
 			);
 			path = "Countries Info";
+			sourceTree = "<group>";
+		};
+		3150E78F2578F910007EB537 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				31C8E08C257D37B200415139 /* Roboto-Bold.ttf */,
+				3150E7902578F94E007EB537 /* Roboto-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		31510C232576665700780ECD /* Queries */ = {
@@ -130,11 +163,27 @@
 			path = Asseblies;
 			sourceTree = "<group>";
 		};
+		31AEEA982579548C00313184 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		31C8E08D257D4EB700415139 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				31C8E08E257D4ED700415139 /* UIView + Extension.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
 		31D04944256FF11E005C82B2 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
-				048D0347256B9235006FE35B /* AppDelegate.swift */,
+				3150E78F2578F910007EB537 /* Fonts */,
 				048D0350256B9237006FE35B /* Assets.xcassets */,
+				048D0347256B9235006FE35B /* AppDelegate.swift */,
 				048D0355256B9237006FE35B /* Info.plist */,
 			);
 			path = "Supporting files";
@@ -144,7 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				3194F6882577BA8C00FA6398 /* CountriesListViewController.swift */,
-				311D4A842577A6EA0095599E /* CountryCollectionViewCell.swift */,
+				315D49CB2579108800CADFC8 /* CountryViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -153,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				048D034D256B9235006FE35B /* Main.storyboard */,
+				315D49CC2579108800CADFC8 /* CountryViewCell.xib */,
 				048D0352256B9237006FE35B /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
@@ -163,6 +213,7 @@
 			children = (
 				31D0494B256FF21C005C82B2 /* ApolloManager.swift */,
 				3114B0EB2577A5B6009BAB2C /* DependecyInjectionManager.swift */,
+				31AEEA8D25792FF000313184 /* ImageManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -187,6 +238,7 @@
 				048D0340256B9235006FE35B /* Sources */,
 				048D0341256B9235006FE35B /* Frameworks */,
 				048D0342256B9235006FE35B /* Resources */,
+				31AEEAB42579582800313184 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -242,10 +294,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3150E7952578FCEF007EB537 /* Roboto-Regular.ttf in Resources */,
 				31D04935256FE998005C82B2 /* schema.json in Resources */,
 				31D04938256FE9B4005C82B2 /* Queries.graphql in Resources */,
 				048D0354256B9237006FE35B /* LaunchScreen.storyboard in Resources */,
 				048D0351256B9237006FE35B /* Assets.xcassets in Resources */,
+				315D49CE2579108800CADFC8 /* CountryViewCell.xib in Resources */,
 				048D034F256B9235006FE35B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,10 +334,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				31510C2C2576686B00780ECD /* Country.swift in Sources */,
-				311D4A852577A6EA0095599E /* CountryCollectionViewCell.swift in Sources */,
 				3194F6962578000A00FA6398 /* ViewControllerAssembly.swift in Sources */,
 				31D04951256FF417005C82B2 /* AllCountries.swift in Sources */,
 				3194F6922577FFFF00FA6398 /* ApolloAssembly.swift in Sources */,
+				315D49CD2579108800CADFC8 /* CountryViewCell.swift in Sources */,
 				048D0348256B9235006FE35B /* AppDelegate.swift in Sources */,
 				31D0494C256FF21C005C82B2 /* ApolloManager.swift in Sources */,
 				3114B0EF2577A5D1009BAB2C /* CountriesListViewModel.swift in Sources */,
@@ -291,6 +345,8 @@
 				3194F6892577BA8C00FA6398 /* CountriesListViewController.swift in Sources */,
 				31510C302576862700780ECD /* API.swift in Sources */,
 				3114B0EC2577A5B6009BAB2C /* DependecyInjectionManager.swift in Sources */,
+				31AEEA8E25792FF000313184 /* ImageManager.swift in Sources */,
+				31C8E08F257D4ED700415139 /* UIView + Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +495,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9964CXZHWZ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Countries Info/Supporting files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -458,6 +518,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9964CXZHWZ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Countries Info/Supporting files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
