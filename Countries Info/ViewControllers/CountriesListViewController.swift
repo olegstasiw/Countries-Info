@@ -89,7 +89,7 @@ extension CountriesListViewController: UICollectionViewDelegateFlowLayout {
         let paddingWidth = sectionInserts.left * (itemPerRow + 1)
         let availableWidth = countriesCollectionView.frame.width - paddingWidth
         let widthPerItem = availableWidth / itemPerRow
-        return CGSize(width: widthPerItem, height: 174)
+        return CGSize(width: widthPerItem, height: 190)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
