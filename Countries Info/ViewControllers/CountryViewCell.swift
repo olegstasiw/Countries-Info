@@ -10,7 +10,6 @@ import WebKit
 
 class CountryViewCell: UICollectionViewCell, WKNavigationDelegate, UIWebViewDelegate {
 
-
     @IBOutlet weak var countryNameLabel: UILabel!
     @IBOutlet weak var capitalLabel: UILabel!
     @IBOutlet weak var regionLabel: UILabel!
@@ -42,8 +41,8 @@ class CountryViewCell: UICollectionViewCell, WKNavigationDelegate, UIWebViewDele
     private func setUI() {
         setShadow()
         
-        contentView.layer.cornerRadius = 15
-        flagImageView.layer.cornerRadius = 5
+        contentView.layer.cornerRadius = Constants.cellCornerRadius
+        flagImageView.layer.cornerRadius = Constants.imageCornerRadius
         
         let firstColor = UIColor(red:255/255, green: 228/255, blue: 133/255, alpha: 0.5)
         let secondColor = UIColor(red:186/255, green: 123/255, blue: 0/255, alpha: 0.5)
@@ -57,7 +56,7 @@ class CountryViewCell: UICollectionViewCell, WKNavigationDelegate, UIWebViewDele
     }
     
     private func setShadow() {
-        self.layer.cornerRadius = 15
+        self.layer.cornerRadius = Constants.cellCornerRadius
         self.layer.borderWidth = 0.0
         self.layer.borderColor = UIColor.lightGray.cgColor
 

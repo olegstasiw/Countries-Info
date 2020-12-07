@@ -24,9 +24,6 @@ class CountriesListViewController: UIViewController {
         }
     }
     
-    private let itemPerRow: CGFloat = 1
-    private let sectionInserts = UIEdgeInsets(top: 20, left: 13, bottom: 20, right: 13)
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         appointDelegates()
@@ -86,21 +83,21 @@ extension CountriesListViewController: UICollectionViewDelegate, UICollectionVie
 
 extension CountriesListViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let paddingWidth = sectionInserts.left * (itemPerRow + 1)
+        let paddingWidth = Constants.sectionInsets.left * (Constants.itemPerRow + 1)
         let availableWidth = countriesCollectionView.frame.width - paddingWidth
-        let widthPerItem = availableWidth / itemPerRow
-        return CGSize(width: widthPerItem, height: 190)
+        let widthPerItem = availableWidth / Constants.itemPerRow
+        return CGSize(width: widthPerItem, height: Constants.cellHeight)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return sectionInserts
+        return Constants.sectionInsets
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return sectionInserts.bottom
+        return Constants.sectionInsets.bottom
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return sectionInserts.left
+        return Constants.sectionInsets.left
     }
 }

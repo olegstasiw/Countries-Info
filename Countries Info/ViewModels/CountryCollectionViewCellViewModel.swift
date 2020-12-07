@@ -16,8 +16,7 @@ protocol CountryCollectionViewCellViewModelProtocol {
     var languages: [String] { get }
     var timeZones: [String] { get }
     var callingCodes: [String] { get }
-    var flag: Data? { get }
-    var flagS: String? { get }
+    var flag: String? { get }
     
     init(country: Country)
 }
@@ -57,12 +56,7 @@ class CountryCollectionViewCellViewModel: CountryCollectionViewCellViewModelProt
         country.callingCodes.forEach { array.append($0.name) }
         return array
     }
-    
-    var flag: Data? {
-        return ImageManager.shared.fetchImage(url: country.flag.svgFile) 
-    }
-    
-    var flagS: String? {
+    var flag: String? {
         return country.flag.svgFile
     }
     private var country: Country
