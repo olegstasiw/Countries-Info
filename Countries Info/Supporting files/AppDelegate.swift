@@ -12,14 +12,15 @@ import Swinject
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    private let assabler = DependecyInjectionManager.shared.assembler
+    private let assembler = DependecyInjectionManager.shared.assembler
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+    
         let window = UIWindow()
         window.makeKeyAndVisible()
-        window.rootViewController = assabler.resolver.resolve(CountriesListViewController.self)
-        self.window = window
+        let navigationController = UINavigationController(rootViewController: assembler.resolver.resolve(CountriesListViewController.self)!)
+        window.rootViewController = navigationController
+            self.window = window
         
         return true
     }

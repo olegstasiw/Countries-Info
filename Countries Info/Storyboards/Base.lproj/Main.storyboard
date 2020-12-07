@@ -5,11 +5,15 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--Countries List View Controller-->
+        <!--Country List-->
         <scene sceneID="yVm-Qf-hm7">
             <objects>
                 <viewController storyboardIdentifier="CountriesListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="f8M-wo-HCj" customClass="CountriesListViewController" customModule="Countries_Info" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,46 +21,96 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2Zw-ba-fRN">
-                                <rect key="frame" x="0.0" y="194" width="414" height="668"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PC3-av-rPK">
+                                <rect key="frame" x="0.0" y="88" width="414" height="215"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="earth" translatesAutoresizingMaskIntoConstraints="NO" id="ZtW-Ju-biv">
+                                        <rect key="frame" x="140.5" y="0.0" width="133" height="133"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="133" id="5QV-gG-2IZ"/>
+                                            <constraint firstAttribute="width" constant="133" id="nn5-bO-gDL"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a card :)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="s8l-Av-xed">
+                                        <rect key="frame" x="0.0" y="133" width="414" height="52"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="44"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lfk-01-gfl">
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="s8l-Av-xed" secondAttribute="trailing" id="D1X-lx-lJA"/>
+                                    <constraint firstItem="ZtW-Ju-biv" firstAttribute="top" secondItem="PC3-av-rPK" secondAttribute="top" id="g9b-nT-v8v"/>
+                                    <constraint firstItem="s8l-Av-xed" firstAttribute="top" secondItem="ZtW-Ju-biv" secondAttribute="bottom" id="myV-GC-8q1"/>
+                                    <constraint firstAttribute="bottom" secondItem="s8l-Av-xed" secondAttribute="bottom" constant="30" id="q95-I7-Zm9"/>
+                                    <constraint firstItem="s8l-Av-xed" firstAttribute="leading" secondItem="PC3-av-rPK" secondAttribute="leading" id="rLa-wV-Xxm"/>
+                                    <constraint firstItem="ZtW-Ju-biv" firstAttribute="centerX" secondItem="PC3-av-rPK" secondAttribute="centerX" id="wzq-RH-vib"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2Zw-ba-fRN">
+                                <rect key="frame" x="0.0" y="308" width="414" height="554"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xBH-Cu-9cf">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="AX9-E8-Oq2" customClass="CountryCollectionViewCell" customModule="Countries_Info" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="pe6-Oh-EvL">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
+                                <activityIndicatorView key="backgroundView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" id="fvr-Bq-u31">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="554"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </activityIndicatorView>
+                                <cells/>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="AIV-L7-Mac"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="2Zw-ba-fRN" firstAttribute="leading" secondItem="AIV-L7-Mac" secondAttribute="leading" id="3gy-NQ-Gd5"/>
-                            <constraint firstItem="AIV-L7-Mac" firstAttribute="trailing" secondItem="2Zw-ba-fRN" secondAttribute="trailing" id="HFr-pI-2Q3"/>
-                            <constraint firstItem="2Zw-ba-fRN" firstAttribute="top" secondItem="AIV-L7-Mac" secondAttribute="top" constant="150" id="Lue-hv-dHt"/>
-                            <constraint firstItem="AIV-L7-Mac" firstAttribute="bottom" secondItem="2Zw-ba-fRN" secondAttribute="bottom" id="sip-1V-A89"/>
+                            <constraint firstItem="2Zw-ba-fRN" firstAttribute="top" secondItem="PC3-av-rPK" secondAttribute="bottom" constant="5" id="3lE-aF-NmF"/>
+                            <constraint firstItem="2Zw-ba-fRN" firstAttribute="trailing" secondItem="AIV-L7-Mac" secondAttribute="trailing" id="Dxt-do-tTy"/>
+                            <constraint firstItem="PC3-av-rPK" firstAttribute="top" secondItem="AIV-L7-Mac" secondAttribute="top" id="EJR-4o-oKF"/>
+                            <constraint firstItem="AIV-L7-Mac" firstAttribute="trailing" secondItem="PC3-av-rPK" secondAttribute="trailing" id="F5w-Xt-MJJ"/>
+                            <constraint firstItem="2Zw-ba-fRN" firstAttribute="leading" secondItem="AIV-L7-Mac" secondAttribute="leading" id="FFq-8y-JXH"/>
+                            <constraint firstItem="PC3-av-rPK" firstAttribute="leading" secondItem="AIV-L7-Mac" secondAttribute="leading" id="QaJ-t9-fUj"/>
+                            <constraint firstItem="2Zw-ba-fRN" firstAttribute="bottom" secondItem="AIV-L7-Mac" secondAttribute="bottom" id="nwk-DL-eOZ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Country List" id="bjS-oF-6jX"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="fvr-Bq-u31" id="QMS-CU-ZdU"/>
                         <outlet property="countriesCollectionView" destination="2Zw-ba-fRN" id="Bqs-hN-jOZ"/>
+                        <outlet property="topView" destination="PC3-av-rPK" id="n8l-cS-9W4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zwd-bs-ruH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-520" y="30"/>
+            <point key="canvasLocation" x="389.85507246376812" y="29.464285714285712"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="UXa-pt-rZ6">
+            <objects>
+                <navigationController storyboardIdentifier="navigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hAv-4K-x2e" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="skp-Pg-YMt">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="32"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="f8M-wo-HCj" kind="relationship" relationship="rootViewController" id="9bG-on-fSN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zFL-c0-FIa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-425" y="29"/>
         </scene>
     </scenes>
     <resources>
+        <image name="earth" width="133" height="133"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
