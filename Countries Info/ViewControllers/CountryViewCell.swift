@@ -6,9 +6,8 @@
 //
 
 import UIKit
-import WebKit
 
-class CountryViewCell: UICollectionViewCell, WKNavigationDelegate, UIWebViewDelegate {
+class CountryViewCell: UICollectionViewCell {
 
     @IBOutlet weak var countryNameLabel: UILabel!
     @IBOutlet weak var capitalLabel: UILabel!

@@ -6,31 +6,41 @@
 //
 
 import Foundation
+import Combine
 
 protocol CountriesListViewModelProtocol {
     var countries: [Country]? { get }
+    var countriesPublisher: Published<[Country]?>.Publisher { get }
     
-    func fetchResult(completion: @escaping() -> Void)
     func numberOfItem() -> Int
     func cellViewModel(indexPath: IndexPath) -> CountryCollectionViewCellViewModelProtocol?
+    func fetch()
 }
 
-class CountriesListViewModel: CountriesListViewModelProtocol {
+class CountriesListViewModel: CountriesListViewModelProtocol, ObservableObject {
     
-    var countries: [Country]?
+    @Published var countries: [Country]?
+    
+    var countriesPublisher: Published<[Country]?>.Publisher { $countries }
+    
+    var cancellable: AnyCancellable?
     
     private let apollo: ApolloManager
     
     init(apollo: ApolloManager) {
         self.apollo = apollo
+        self.fetch()
     }
     
-    func fetchResult(completion: @escaping () -> Void) {
-        
-        apollo.fetch(query: AllCountriesQuery(), type: AllCountries.self) { (result) in
-            self.countries = result.country
-            completion()
+    func fetch() {
+        cancellable = Future<AllCountries, Error> { some in
+            self.apollo.fetch(query: AllCountriesQuery(), type: AllCountries.self){ (data) in
+                return some(.success(data))
+            }
         }
+        .sink(receiveCompletion:{ _ in}, receiveValue: { (allCountries) in
+            self.countries = allCountries.country
+        })
     }
     
     func numberOfItem() -> Int {

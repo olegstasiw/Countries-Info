@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class CountriesListViewController: UIViewController {
     
@@ -13,23 +14,22 @@ class CountriesListViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var topView: UIView!
     
-    var viewModel: CountriesListViewModelProtocol! {
-        didSet {
-            viewModel.fetchResult {
-                DispatchQueue.main.async {
-                    self.countriesCollectionView.reloadData()
-                    self.activityIndicator.stopAnimating()
-                }
-            }
-        }
-    }
-    
+    var viewModel: CountriesListViewModelProtocol!
+    var subscription = Set<AnyCancellable>()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         appointDelegates()
         registerCell()
-   
         setUI()
+        
+        viewModel?.countriesPublisher.sink { _ in
+            DispatchQueue.main.async {
+                self.countriesCollectionView.reloadData()
+                self.activityIndicator.stopAnimating()
+            }
+        }
+        .store(in: &subscription)
     }
     
     private func setUI() {
