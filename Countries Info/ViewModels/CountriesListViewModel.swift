@@ -9,7 +9,6 @@ import Foundation
 import Combine
 
 protocol CountriesListViewModelProtocol {
-    var countries: [Country]? { get }
     var countriesPublisher: Published<[Country]?>.Publisher { get }
     
     func numberOfItem() -> Int

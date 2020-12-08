@@ -22,14 +22,7 @@ class CountriesListViewController: UIViewController {
         appointDelegates()
         registerCell()
         setUI()
-        
-        viewModel?.countriesPublisher.sink { _ in
-            DispatchQueue.main.async {
-                self.countriesCollectionView.reloadData()
-                self.activityIndicator.stopAnimating()
-            }
-        }
-        .store(in: &subscription)
+        configureObservers()
     }
     
     private func setUI() {
@@ -53,6 +46,16 @@ class CountriesListViewController: UIViewController {
     private func registerCell() {
         let nib = UINib(nibName: "CountryViewCell", bundle: nil)
         countriesCollectionView?.register(nib, forCellWithReuseIdentifier: "CountryViewCell")
+    }
+    
+    private func configureObservers() {
+        viewModel?.countriesPublisher.sink { _ in
+            DispatchQueue.main.async {
+                self.countriesCollectionView.reloadData()
+                self.activityIndicator.stopAnimating()
+            }
+        }
+        .store(in: &subscription)
     }
     
     private func setShadow() {
