@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 protocol CountriesListViewModelProtocol {
-    var countriesPublisher: Published<[Country]?>.Publisher { get }
+    var countriesPublisher: Published<[Country]>.Publisher { get }
     
     func numberOfItem() -> Int
     func cellViewModel(indexPath: IndexPath) -> CountryCollectionViewCellViewModelProtocol?
@@ -18,9 +18,9 @@ protocol CountriesListViewModelProtocol {
 
 class CountriesListViewModel: CountriesListViewModelProtocol, ObservableObject {
     
-    @Published var countries: [Country]?
+    @Published var countries: [Country] = []
     
-    var countriesPublisher: Published<[Country]?>.Publisher { $countries }
+    var countriesPublisher: Published<[Country]>.Publisher { $countries }
     
     var cancellable: AnyCancellable?
     
@@ -43,11 +43,10 @@ class CountriesListViewModel: CountriesListViewModelProtocol, ObservableObject {
     }
     
     func numberOfItem() -> Int {
-        countries?.count ?? 0
+        countries.count
     }
     
     func cellViewModel(indexPath: IndexPath) -> CountryCollectionViewCellViewModelProtocol? {
-        guard let countries = countries else { return nil }
         return CountryCollectionViewCellViewModel(country: countries[indexPath.row])
     }
 }
