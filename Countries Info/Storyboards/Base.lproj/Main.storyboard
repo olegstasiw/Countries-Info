@@ -81,11 +81,28 @@
                         <outlet property="activityIndicator" destination="fvr-Bq-u31" id="QMS-CU-ZdU"/>
                         <outlet property="countriesCollectionView" destination="2Zw-ba-fRN" id="Bqs-hN-jOZ"/>
                         <outlet property="topView" destination="PC3-av-rPK" id="n8l-cS-9W4"/>
+                        <segue destination="nzY-oK-Z9V" kind="show" identifier="DetailViewControllerSegue" id="P6V-ii-MYI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zwd-bs-ruH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="389.85507246376812" y="29.464285714285712"/>
+        </scene>
+        <!--Country Details View Controller-->
+        <scene sceneID="agN-ff-Qwv">
+            <objects>
+                <viewController storyboardIdentifier="CountryDetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nzY-oK-Z9V" customClass="CountryDetailsViewController" customModule="Countries_Info" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2eU-Lv-Ejq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="wFK-cq-6dG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="s04-jb-E17"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zJS-i3-Zav" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1241" y="29"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="UXa-pt-rZ6">

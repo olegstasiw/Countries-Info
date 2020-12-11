@@ -10,6 +10,7 @@ import Combine
 
 protocol CountriesListViewModelProtocol {
     var countriesPublisher: Published<[Country]>.Publisher { get }
+    var countries: [Country] { get }
     
     func numberOfItem() -> Int
     func cellViewModel(indexPath: IndexPath) -> CountryCollectionViewCellViewModelProtocol?
@@ -19,12 +20,10 @@ protocol CountriesListViewModelProtocol {
 class CountriesListViewModel: CountriesListViewModelProtocol, ObservableObject {
     
     @Published var countries: [Country] = []
-    
     var countriesPublisher: Published<[Country]>.Publisher { $countries }
-    
     var cancellable: AnyCancellable?
-    
     private let apollo: ApolloManager
+    private var indexPath: IndexPath = IndexPath()
     
     init(apollo: ApolloManager) {
         self.apollo = apollo

@@ -82,6 +82,13 @@ extension CountriesListViewController: UICollectionViewDelegate, UICollectionVie
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        let detailVC = DependecyInjectionManager.shared.assembler.resolver.resolve(CountryDetailsViewController.self)!
+        detailVC.viewModel = CountryDetailsViewModel(country: viewModel.countries[indexPath.row])
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
+    
 }
 
 extension CountriesListViewController: UICollectionViewDelegateFlowLayout {
