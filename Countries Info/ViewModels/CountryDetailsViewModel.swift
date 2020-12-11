@@ -33,7 +33,7 @@ class CountryDetailsViewModel: CountryDetailsViewModelProtocol {
         country.subregion?.region.name ?? ""
     }
     var population: String {
-        String(country.population)
+        String(setPoputation(population: country.population))
     }
     
     var currencies: [String] {
@@ -49,12 +49,12 @@ class CountryDetailsViewModel: CountryDetailsViewModelProtocol {
     }
     var timeZones: [String] {
         var array: [String] = []
-        country.timezones.forEach { array.append($0.name) }
+        country.timezones.forEach { array.append(setGMTTimeZone(zone: $0.name)) }
         return array
     }
     var callingCodes: [String] {
         var array: [String] = []
-        country.callingCodes.forEach { array.append($0.name) }
+        country.callingCodes.forEach { array.append("+\($0.name)") }
         return array
     }
     var flag: String? {
@@ -65,6 +65,45 @@ class CountryDetailsViewModel: CountryDetailsViewModelProtocol {
     
     required init(country: Country) {
         self.country = country
+    }
+    
+    private func setGMTTimeZone(zone: String) -> String {
+        var timeZone = zone
+        let formatter = DateFormatter()
+        formatter.dateFormat = "H:mm"
+        if let utc = zone.range(of: "UTC") {
+            timeZone.removeSubrange(utc)
+            if let plus = timeZone.range(of: "+") {
+                timeZone.removeSubrange(plus)
+                let date = formatter.date(from: timeZone)
+                timeZone = "GMT + \(formatter.string(from: date ?? Date()))"
+                return timeZone
+            } else if let minus = timeZone.range(of: "-") {
+                timeZone.removeSubrange(minus)
+                let date = formatter.date(from: timeZone)
+                timeZone = "GMT - \(formatter.string(from: date ?? Date()))"
+                return timeZone
+            } else if timeZone.isEmpty {
+                timeZone = "GMT + 0"
+                return timeZone
+            }
+        }
+        return timeZone
+    }
+    
+    
+    private func setPoputation(population: Double) -> String {
+        var number = population
+        if population > Constants.million {
+            number /= Constants.million
+            let str = String(number.rounded(toPlaces: 2)) + " m"
+            return str.replacingOccurrences(of: ".", with: ",")
+            
+        } else {
+            number /= Constants.thousand
+            let str = String(number.rounded(toPlaces: 2)) + " k"
+            return str.replacingOccurrences(of: ".", with: ",")
+        }
     }
     
     

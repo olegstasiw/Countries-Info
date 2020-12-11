@@ -14,7 +14,15 @@ struct Constants {
     
     static let cellHeight: CGFloat = 190
     
-    static let cellCornerRadius: CGFloat = 15
+    static let cornerRadius: CGFloat = 15
     
     static let imageCornerRadius: CGFloat = 5
+    
+    static let million: Double = 1000000
+    
+    static let thousand: Double = 1000
+    
+    static let spacing: CGFloat = 7
+    
+    static let padding: CGFloat = 20
 }

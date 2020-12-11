@@ -25,13 +25,8 @@ class CountriesListViewController: UIViewController {
         configureObservers()
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let countryDetailsVC = segue.destination as? CountryDetailsViewController
-        
-        countryDetailsVC?.viewModel = sender as? CountryDetailsViewModelProtocol
-    }
-    
     private func setUI() {
+        navigationController?.navigationBar.topItem?.title = "Counries list"
         navigationController?.navigationBar.barTintColor = UIColor(red:214/255, green: 194/255, blue: 141/255, alpha: 1)
         let attrs = [
             NSAttributedString.Key.font: UIFont(name: "Roboto-Regular", size: 24)!
@@ -90,8 +85,9 @@ extension CountriesListViewController: UICollectionViewDelegate, UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        
-        performSegue(withIdentifier: "DetailViewControllerSegue", sender: CountryDetailsViewModel(country: viewModel.countries[indexPath.row]))
+        let datailVC = DependecyInjectionManager.shared.assembler.resolver.resolve(CountryDetailsViewController.self)!
+        datailVC.viewModel = CountryDetailsViewModel(country: viewModel.countries[indexPath.row])
+        navigationController?.pushViewController(datailVC, animated: true)
     }
     
 }

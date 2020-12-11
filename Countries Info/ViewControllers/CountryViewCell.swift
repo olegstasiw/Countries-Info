@@ -17,7 +17,6 @@ class CountryViewCell: UICollectionViewCell {
     @IBOutlet weak var countryStack: UIStackView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
-
     var viewModel: CountryCollectionViewCellViewModelProtocol? {
         didSet {
                 countryNameLabel.text = self.viewModel?.countryName
@@ -40,7 +39,7 @@ class CountryViewCell: UICollectionViewCell {
     private func setUI() {
         setShadow()
         
-        contentView.layer.cornerRadius = Constants.cellCornerRadius
+        contentView.layer.cornerRadius = Constants.cornerRadius
         flagImageView.layer.cornerRadius = Constants.imageCornerRadius
         
         let firstColor = UIColor(red:255/255, green: 228/255, blue: 133/255, alpha: 0.5)
@@ -55,7 +54,7 @@ class CountryViewCell: UICollectionViewCell {
     }
     
     private func setShadow() {
-        self.layer.cornerRadius = Constants.cellCornerRadius
+        self.layer.cornerRadius = Constants.cornerRadius
         self.layer.borderWidth = 0.0
         self.layer.borderColor = UIColor.lightGray.cgColor
 
