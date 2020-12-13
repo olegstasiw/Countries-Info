@@ -13,11 +13,13 @@ class CountryDetailsViewController: UIViewController {
     @IBOutlet weak var capitalLabel: UILabel!
     @IBOutlet weak var regionLabel: UILabel!
     @IBOutlet weak var populationLabel: UILabel!
+    
     @IBOutlet weak var currenciesStack: UIStackView!
     @IBOutlet weak var languagesStack: UIStackView!
-    
     @IBOutlet weak var timesZonesStack: UIStackView!
     @IBOutlet weak var callingCodesStack: UIStackView!
+    
+    @IBOutlet var colorViews: [UIView]!
     
     var viewModel: CountryDetailsViewModelProtocol!
     
@@ -32,16 +34,12 @@ class CountryDetailsViewController: UIViewController {
         setValue(array: viewModel.timeZones, stack: timesZonesStack, color: #colorLiteral(red: 0.7254901961, green: 0.9176470588, blue: 0.7647058824, alpha: 1), type: TimeZonesButton.self)
         setValue(array: viewModel.callingCodes, stack: callingCodesStack, color: #colorLiteral(red: 0.6509803922, green: 0.9019607843, blue: 0.9921568627, alpha: 1), type: CallingCodesButton.self)
         
-        setupNavigationController()
+        setUI()
     }
     
-    private func setupNavigationController() {
-        navigationController?.navigationBar.topItem?.title = ""
-        navigationController?.navigationBar.tintColor = UIColor.black
-        
-        let img = UIImage(named: "backImg")
-        navigationController?.navigationBar.backIndicatorImage = resizeImage(image: img!, newWidth: 16)
-        navigationController?.navigationBar.backIndicatorTransitionMaskImage = resizeImage(image: img!, newWidth: 16)
+    private func setUI() {
+        addBackButton()
+        colorViews.forEach { $0.layer.cornerRadius = $0.frame.height / 2 }
     }
     
     private func setValue(array: [String], stack: UIStackView, color: UIColor, type: UIButton.Type) {
@@ -68,30 +66,50 @@ class CountryDetailsViewController: UIViewController {
     }
     
     private func setupButton(_ button: UIButton) {
-        button.contentEdgeInsets = UIEdgeInsets(top: Constants.padding,
-                                                left: Constants.padding,
-                                                bottom: Constants.padding,
-                                                right: Constants.padding)
+        button.contentEdgeInsets = Constants.buttonEdgeInsets
         button.layer.cornerRadius = Constants.cornerRadius
-        button.setTitle("...", for: .normal)
-        button.backgroundColor = .blue
+        let origImage = UIImage(named: Constants.dotsImage)
+        let tintedImage = origImage?.withRenderingMode(.alwaysTemplate)
+        button.setImage(tintedImage, for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
+        button.imageEdgeInsets = Constants.buttonImageEdgeInsets
+        button.tintColor = .white
+        button.backgroundColor = .systemBlue
         button.addTarget(self, action: #selector(showAll(sender:)), for: .touchUpInside)
     }
     
     @objc private func showAll(sender: UIButton) {
         switch sender {
         case is CurrenciesButton:
-            print("1")
+            let viewController = DependecyInjectionManager.shared.assembler.resolver.resolve(ShowAllViewController.self)!
+            viewController.viewModel = ShowAllViewModel(list: viewModel.currencies, color: #colorLiteral(red: 0.9843137255, green: 0.8274509804, blue: 0.7529411765, alpha: 1))
+            openViewController(viewController)
+            
         case is LanguagesButton:
-            print("2")
+            let viewController = DependecyInjectionManager.shared.assembler.resolver.resolve(ShowAllViewController.self)!
+            viewController.viewModel = ShowAllViewModel(list: viewModel.languages, color: #colorLiteral(red: 0.9843137255, green: 0.8274509804, blue: 0.7529411765, alpha: 1))
+            openViewController(viewController)
+            
         case is TimeZonesButton:
-            print("3")
+            let viewController = DependecyInjectionManager.shared.assembler.resolver.resolve(ShowAllViewController.self)!
+            viewController.viewModel = ShowAllViewModel(list: viewModel.timeZones, color: #colorLiteral(red: 0.7254901961, green: 0.9176470588, blue: 0.7647058824, alpha: 1))
+            openViewController(viewController)
+            
         case is CallingCodesButton:
-            print("4")
+            let viewController = DependecyInjectionManager.shared.assembler.resolver.resolve(ShowAllViewController.self)!
+            viewController.viewModel = ShowAllViewModel(list: viewModel.callingCodes, color: #colorLiteral(red: 0.6509803922, green: 0.9019607843, blue: 0.9921568627, alpha: 1))
+            openViewController(viewController)
         default:
             break
         }
     }
+    
+    private func openViewController(_ viewController: UIViewController) {
+        viewController.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        viewController.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        self.present(viewController, animated: true, completion: nil)
+    }
+    
     private func addSpasingView(to stack: UIStackView) {
         let spacerView = UIView()
         spacerView.setContentHuggingPriority(.defaultLow, for: .horizontal)
@@ -112,18 +130,18 @@ class CountryDetailsViewController: UIViewController {
         label.layer.cornerRadius = Constants.cornerRadius
     }
     
-    private func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage? {
-        
-        let scale = newWidth / image.size.width
-        let newHeight = image.size.height * scale
-        UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
-        image.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
-        
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        return newImage
+    private func addBackButton() {
+        let btnLeftMenu: UIButton = UIButton()
+        let image = UIImage(named: Constants.backImage)
+        btnLeftMenu.setImage(image, for: .normal)
+        btnLeftMenu.sizeToFit()
+        btnLeftMenu.addTarget(self, action: #selector (backButtonClick), for: .touchUpInside)
+        let barButton = UIBarButtonItem(customView: btnLeftMenu)
+        self.navigationItem.leftBarButtonItem = barButton
+    }
+
+    @objc private func backButtonClick() {
+        self.navigationController?.popViewController(animated: true)
     }
     
 }
-

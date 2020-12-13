@@ -14,6 +14,8 @@
 		3114B0EC2577A5B6009BAB2C /* DependecyInjectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3114B0EB2577A5B6009BAB2C /* DependecyInjectionManager.swift */; };
 		3114B0EF2577A5D1009BAB2C /* CountriesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3114B0EE2577A5D1009BAB2C /* CountriesListViewModel.swift */; };
 		3114B0F32577A62B009BAB2C /* CountryCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3114B0F22577A62B009BAB2C /* CountryCollectionViewCellViewModel.swift */; };
+		313B2EF42583819B00BEA636 /* ShowAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313B2EF32583819B00BEA636 /* ShowAllViewController.swift */; };
+		313B2EF62583952900BEA636 /* ShowAllViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313B2EF52583952900BEA636 /* ShowAllViewModel.swift */; };
 		3147266A25836E6000F2238D /* Double + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3147266925836E6000F2238D /* Double + Extension.swift */; };
 		3150E7952578FCEF007EB537 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3150E7902578F94E007EB537 /* Roboto-Regular.ttf */; };
 		31510C2C2576686B00780ECD /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31510C2B2576686B00780ECD /* Country.swift */; };
@@ -60,6 +62,8 @@
 		3114B0EB2577A5B6009BAB2C /* DependecyInjectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependecyInjectionManager.swift; sourceTree = "<group>"; };
 		3114B0EE2577A5D1009BAB2C /* CountriesListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountriesListViewModel.swift; sourceTree = "<group>"; };
 		3114B0F22577A62B009BAB2C /* CountryCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		313B2EF32583819B00BEA636 /* ShowAllViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAllViewController.swift; sourceTree = "<group>"; };
+		313B2EF52583952900BEA636 /* ShowAllViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAllViewModel.swift; sourceTree = "<group>"; };
 		3147266925836E6000F2238D /* Double + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double + Extension.swift"; sourceTree = "<group>"; };
 		3150E7902578F94E007EB537 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		31510C2B2576686B00780ECD /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
@@ -172,6 +176,7 @@
 				3114B0EE2577A5D1009BAB2C /* CountriesListViewModel.swift */,
 				3114B0F22577A62B009BAB2C /* CountryCollectionViewCellViewModel.swift */,
 				31B33386257F8906000A8673 /* CountryDetailsViewModel.swift */,
+				313B2EF52583952900BEA636 /* ShowAllViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -218,6 +223,7 @@
 				3194F6882577BA8C00FA6398 /* CountriesListViewController.swift */,
 				315D49CB2579108800CADFC8 /* CountryViewCell.swift */,
 				31B33382257F88A8000A8673 /* CountryDetailsViewController.swift */,
+				313B2EF32583819B00BEA636 /* ShowAllViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -363,12 +369,14 @@
 				3194F6922577FFFF00FA6398 /* ApolloAssembly.swift in Sources */,
 				315D49CD2579108800CADFC8 /* CountryViewCell.swift in Sources */,
 				048D0348256B9235006FE35B /* AppDelegate.swift in Sources */,
+				313B2EF42583819B00BEA636 /* ShowAllViewController.swift in Sources */,
 				31FB19E8258370890048DB7C /* PaddingLabel.swift in Sources */,
 				31D0494C256FF21C005C82B2 /* ApolloManager.swift in Sources */,
 				3114B0EF2577A5D1009BAB2C /* CountriesListViewModel.swift in Sources */,
 				3114B0F32577A62B009BAB2C /* CountryCollectionViewCellViewModel.swift in Sources */,
 				3194F6892577BA8C00FA6398 /* CountriesListViewController.swift in Sources */,
 				31510C302576862700780ECD /* API.swift in Sources */,
+				313B2EF62583952900BEA636 /* ShowAllViewModel.swift in Sources */,
 				31543632257E64B90079CDA6 /* Constants.swift in Sources */,
 				31B33383257F88A8000A8673 /* CountryDetailsViewController.swift in Sources */,
 				3114B0EC2577A5B6009BAB2C /* DependecyInjectionManager.swift in Sources */,

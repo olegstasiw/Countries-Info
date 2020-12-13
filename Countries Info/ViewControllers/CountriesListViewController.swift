@@ -26,10 +26,9 @@ class CountriesListViewController: UIViewController {
     }
     
     private func setUI() {
-        navigationController?.navigationBar.topItem?.title = "Counries list"
         navigationController?.navigationBar.barTintColor = UIColor(red:214/255, green: 194/255, blue: 141/255, alpha: 1)
         let attrs = [
-            NSAttributedString.Key.font: UIFont(name: "Roboto-Regular", size: 24)!
+            NSAttributedString.Key.font: UIFont(name: Constants.roboto, size: 24)!
         ]
 
         navigationController?.navigationBar.titleTextAttributes = attrs
@@ -45,8 +44,8 @@ class CountriesListViewController: UIViewController {
     }
     
     private func registerCell() {
-        let nib = UINib(nibName: "CountryViewCell", bundle: nil)
-        countriesCollectionView?.register(nib, forCellWithReuseIdentifier: "CountryViewCell")
+        let nib = UINib(nibName: Constants.cellId, bundle: nil)
+        countriesCollectionView?.register(nib, forCellWithReuseIdentifier: Constants.cellId)
     }
     
     private func configureObservers() {
@@ -76,7 +75,7 @@ extension CountriesListViewController: UICollectionViewDelegate, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = countriesCollectionView.dequeueReusableCell(withReuseIdentifier: "CountryViewCell", for: indexPath) as! CountryViewCell
+        let cell = countriesCollectionView.dequeueReusableCell(withReuseIdentifier: Constants.cellId, for: indexPath) as! CountryViewCell
         let celViewModel = viewModel.cellViewModel(indexPath: indexPath)
         cell.viewModel = celViewModel
        
