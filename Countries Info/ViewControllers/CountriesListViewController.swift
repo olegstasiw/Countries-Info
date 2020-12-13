@@ -84,9 +84,9 @@ extension CountriesListViewController: UICollectionViewDelegate, UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        let datailVC = DependecyInjectionManager.shared.assembler.resolver.resolve(CountryDetailsViewController.self)!
-        datailVC.viewModel = CountryDetailsViewModel(country: viewModel.countries[indexPath.row])
-        navigationController?.pushViewController(datailVC, animated: true)
+        let detailVC = DependecyInjectionManager.shared.assembler.resolver.resolve(CountryDetailsViewController.self)!
+        detailVC.viewModel = CountryDetailsViewModel(country: viewModel.countries[indexPath.row])
+        navigationController?.pushViewController(detailVC, animated: true)
     }
     
 }
