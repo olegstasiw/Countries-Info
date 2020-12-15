@@ -19,7 +19,6 @@ class ShowAllViewModel: ShowAllViewModelProtocol {
     var color: NewColor
     var list: [String]
     
-    
     required init(list: [String], color: NewColor) {
         self.list = list
         self.color = color

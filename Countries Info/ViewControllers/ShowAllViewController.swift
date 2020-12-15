@@ -8,7 +8,7 @@
 import UIKit
 
 class ShowAllViewController: UIViewController {
-
+    
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var listStack: UIStackView!
@@ -21,10 +21,13 @@ class ShowAllViewController: UIViewController {
         makeBlur()
         setupStack()
         
+        setUI()
+    }
+    
+    private func setUI() {
         closeButton.layer.cornerRadius = closeButton.frame.height / 2
         contentView.layer.cornerRadius = SizeConstants.cornerRadius
     }
-    
     private func makeBlur() {
         let blurFx = UIBlurEffect(style: UIBlurEffect.Style.dark)
         let blurFxView = UIVisualEffectView(effect: blurFx)
@@ -51,7 +54,7 @@ class ShowAllViewController: UIViewController {
             listStack.addArrangedSubview(label)
         }
         contenViewHeightConstraint.constant = height
-
+        
     }
     
     private func configureLabel(label: UILabel, text: String, colorType: NewColor) {

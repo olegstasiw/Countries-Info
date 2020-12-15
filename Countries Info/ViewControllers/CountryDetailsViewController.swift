@@ -88,7 +88,6 @@ class CountryDetailsViewController: UIViewController {
             openViewController(viewController)
             
         case is LanguagesButton:
-            
             viewController.viewModel = ShowAllViewModel(list: viewModel.languages, color: .orange)
             openViewController(viewController)
             
@@ -128,7 +127,6 @@ class CountryDetailsViewController: UIViewController {
         label.backgroundColor = color
         label.layer.masksToBounds = true
         label.layer.cornerRadius = label.intrinsicContentSize.height / 2
-        
     }
     
     private func addBackButton() {
