@@ -51,20 +51,20 @@ class CountryDetailsViewController: UIViewController {
         
         let label = PaddingLabel(EdgeInsetsConstants.labelEdgeInsetsForShowAllScreen)
 
-        for i in allResult {
-            configureLabel(label: label, text: i, color: color)
-            width += label.intrinsicContentSize.width + SizeConstants.spacing
-            switch width < stack.frame.width {
-            case true:
-                stack.addArrangedSubview(label)
-            case false:
-                stack.addArrangedSubview(allResultButton)
-                addSpasingView(to: stack)
-                return
+        for text in allResult {
+                configureLabel(label: label, text: text, color: color)
+                width += label.intrinsicContentSize.width + SizeConstants.spacing
+                if width < stack.frame.width {
+                    stack.addArrangedSubview(label)
+                } else {
+                    stack.addArrangedSubview(allResultButton)
+                    addSpasingView(to: stack)
+                    break
+                }
             }
-        }
-        addSpasingView(to: stack)
-      
+            if allResultButton.superview == nil {
+                addSpasingView(to: stack)
+            }
     }
     
     private func setupButton(_ button: UIButton) {
