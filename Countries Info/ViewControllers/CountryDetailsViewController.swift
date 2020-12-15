@@ -29,10 +29,10 @@ class CountryDetailsViewController: UIViewController {
         capitalLabel.text = viewModel.capital
         regionLabel.text = viewModel.region
         populationLabel.text = viewModel.population
-        setValue(allResult: viewModel.currencies, stack: currenciesStack, color: #colorLiteral(red: 1, green: 0.8941176471, blue: 0.6431372549, alpha: 1), buttonType: CurrenciesButton.self)
-        setValue(allResult: viewModel.languages, stack: languagesStack, color: #colorLiteral(red: 0.9843137255, green: 0.8274509804, blue: 0.7529411765, alpha: 1), buttonType: LanguagesButton.self)
-        setValue(allResult: viewModel.timeZones, stack: timesZonesStack, color: #colorLiteral(red: 0.7254901961, green: 0.9176470588, blue: 0.7647058824, alpha: 1), buttonType: TimeZonesButton.self)
-        setValue(allResult: viewModel.callingCodes, stack: callingCodesStack, color: #colorLiteral(red: 0.6509803922, green: 0.9019607843, blue: 0.9921568627, alpha: 1), buttonType: CallingCodesButton.self)
+        setValue(allResults: viewModel.currencies, stack: currenciesStack, color: #colorLiteral(red: 1, green: 0.8941176471, blue: 0.6431372549, alpha: 1), buttonType: CurrenciesButton.self)
+        setValue(allResults: viewModel.languages, stack: languagesStack, color: #colorLiteral(red: 0.9843137255, green: 0.8274509804, blue: 0.7529411765, alpha: 1), buttonType: LanguagesButton.self)
+        setValue(allResults: viewModel.timeZones, stack: timesZonesStack, color: #colorLiteral(red: 0.7254901961, green: 0.9176470588, blue: 0.7647058824, alpha: 1), buttonType: TimeZonesButton.self)
+        setValue(allResults: viewModel.callingCodes, stack: callingCodesStack, color: #colorLiteral(red: 0.6509803922, green: 0.9019607843, blue: 0.9921568627, alpha: 1), buttonType: CallingCodesButton.self)
         
         setUI()
     }
@@ -42,7 +42,7 @@ class CountryDetailsViewController: UIViewController {
         colorViews.forEach { $0.layer.cornerRadius = $0.frame.height / 2 }
     }
     
-    private func setValue(allResult: [String], stack: UIStackView, color: UIColor, buttonType: UIButton.Type) {
+    private func setValue(allResults: [String], stack: UIStackView, color: UIColor, buttonType: UIButton.Type) {
         let allResultButton = buttonType.init()
         setupButton(allResultButton)
         
@@ -51,7 +51,7 @@ class CountryDetailsViewController: UIViewController {
         
         let label = PaddingLabel(EdgeInsetsConstants.labelEdgeInsetsForShowAllScreen)
 
-        for text in allResult {
+        for text in allResults {
                 configureLabel(label: label, text: text, color: color)
                 width += label.intrinsicContentSize.width + SizeConstants.spacing
                 if width < stack.frame.width {
