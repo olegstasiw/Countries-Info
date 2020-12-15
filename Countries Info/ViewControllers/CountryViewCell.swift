@@ -39,8 +39,8 @@ class CountryViewCell: UICollectionViewCell {
     private func setUI() {
         setShadow()
         
-        contentView.layer.cornerRadius = Constants.cornerRadius
-        flagImageView.layer.cornerRadius = Constants.imageCornerRadius
+        contentView.layer.cornerRadius = SizeConstants.cornerRadius
+        flagImageView.layer.cornerRadius = SizeConstants.imageCornerRadius
         
         let firstColor = UIColor(red:255/255, green: 228/255, blue: 133/255, alpha: 0.5)
         let secondColor = UIColor(red:186/255, green: 123/255, blue: 0/255, alpha: 0.5)
@@ -54,7 +54,7 @@ class CountryViewCell: UICollectionViewCell {
     }
     
     private func setShadow() {
-        self.layer.cornerRadius = Constants.cornerRadius
+        self.layer.cornerRadius = SizeConstants.cornerRadius
         self.layer.borderWidth = 0.0
         self.layer.borderColor = UIColor.lightGray.cgColor
 

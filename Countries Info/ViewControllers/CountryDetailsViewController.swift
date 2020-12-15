@@ -29,10 +29,10 @@ class CountryDetailsViewController: UIViewController {
         capitalLabel.text = viewModel.capital
         regionLabel.text = viewModel.region
         populationLabel.text = viewModel.population
-        setValue(array: viewModel.currencies, stack: currenciesStack, color: #colorLiteral(red: 1, green: 0.8941176471, blue: 0.6431372549, alpha: 1), type: CurrenciesButton.self)
-        setValue(array: viewModel.languages, stack: languagesStack, color: #colorLiteral(red: 0.9843137255, green: 0.8274509804, blue: 0.7529411765, alpha: 1), type: LanguagesButton.self)
-        setValue(array: viewModel.timeZones, stack: timesZonesStack, color: #colorLiteral(red: 0.7254901961, green: 0.9176470588, blue: 0.7647058824, alpha: 1), type: TimeZonesButton.self)
-        setValue(array: viewModel.callingCodes, stack: callingCodesStack, color: #colorLiteral(red: 0.6509803922, green: 0.9019607843, blue: 0.9921568627, alpha: 1), type: CallingCodesButton.self)
+        setValue(allResult: viewModel.currencies, stack: currenciesStack, color: #colorLiteral(red: 1, green: 0.8941176471, blue: 0.6431372549, alpha: 1), buttonType: CurrenciesButton.self)
+        setValue(allResult: viewModel.languages, stack: languagesStack, color: #colorLiteral(red: 0.9843137255, green: 0.8274509804, blue: 0.7529411765, alpha: 1), buttonType: LanguagesButton.self)
+        setValue(allResult: viewModel.timeZones, stack: timesZonesStack, color: #colorLiteral(red: 0.7254901961, green: 0.9176470588, blue: 0.7647058824, alpha: 1), buttonType: TimeZonesButton.self)
+        setValue(allResult: viewModel.callingCodes, stack: callingCodesStack, color: #colorLiteral(red: 0.6509803922, green: 0.9019607843, blue: 0.9921568627, alpha: 1), buttonType: CallingCodesButton.self)
         
         setUI()
     }
@@ -42,62 +42,62 @@ class CountryDetailsViewController: UIViewController {
         colorViews.forEach { $0.layer.cornerRadius = $0.frame.height / 2 }
     }
     
-    private func setValue(array: [String], stack: UIStackView, color: UIColor, type: UIButton.Type) {
-        let button = type.init()
-        setupButton(button)
+    private func setValue(allResult: [String], stack: UIStackView, color: UIColor, buttonType: UIButton.Type) {
+        let allResultButton = buttonType.init()
+        setupButton(allResultButton)
         
-        var width: CGFloat = button.intrinsicContentSize.width + Constants.spacing
+        var width: CGFloat = allResultButton.intrinsicContentSize.width + SizeConstants.spacing
         configureStack(stack)
         
-        for text in array {
-            let label = PaddingLabel(withInsets: Constants.padding, Constants.padding, Constants.padding, Constants.padding)
-            configureLabel(label: label, text: text, color: color)
-            width += label.intrinsicContentSize.width + Constants.spacing
-            
-            if width > stack.frame.width {
-                stack.addArrangedSubview(button)
+        let label = PaddingLabel(EdgeInsetsConstants.labelEdgeInsetsForShowAllScreen)
+
+        for i in allResult {
+            configureLabel(label: label, text: i, color: color)
+            width += label.intrinsicContentSize.width + SizeConstants.spacing
+            switch width < stack.frame.width {
+            case true:
+                stack.addArrangedSubview(label)
+            case false:
+                stack.addArrangedSubview(allResultButton)
                 addSpasingView(to: stack)
                 return
-            }  else {
-                stack.addArrangedSubview(label)
             }
         }
         addSpasingView(to: stack)
+      
     }
     
     private func setupButton(_ button: UIButton) {
-        button.contentEdgeInsets = Constants.buttonEdgeInsets
-        button.layer.cornerRadius = Constants.cornerRadius
-        let origImage = UIImage(named: Constants.dotsImage)
+        button.contentEdgeInsets = EdgeInsetsConstants.buttonEdgeInsets
+        button.layer.cornerRadius = SizeConstants.cornerRadius
+        let origImage = UIImage(named: NameConstants.dotsImage)
         let tintedImage = origImage?.withRenderingMode(.alwaysTemplate)
         button.setImage(tintedImage, for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
-        button.imageEdgeInsets = Constants.buttonImageEdgeInsets
+        button.imageEdgeInsets = EdgeInsetsConstants.buttonImageEdgeInsets
         button.tintColor = .white
         button.backgroundColor = .systemBlue
         button.addTarget(self, action: #selector(showAll(sender:)), for: .touchUpInside)
     }
     
     @objc private func showAll(sender: UIButton) {
+        let viewController = DependecyInjectionManager.shared.assembler.resolver.resolve(ShowAllViewController.self)!
         switch sender {
         case is CurrenciesButton:
-            let viewController = DependecyInjectionManager.shared.assembler.resolver.resolve(ShowAllViewController.self)!
-            viewController.viewModel = ShowAllViewModel(list: viewModel.currencies, color: #colorLiteral(red: 0.9843137255, green: 0.8274509804, blue: 0.7529411765, alpha: 1))
+            viewController.viewModel = ShowAllViewModel(list: viewModel.currencies, color: .yellow)
             openViewController(viewController)
             
         case is LanguagesButton:
-            let viewController = DependecyInjectionManager.shared.assembler.resolver.resolve(ShowAllViewController.self)!
-            viewController.viewModel = ShowAllViewModel(list: viewModel.languages, color: #colorLiteral(red: 0.9843137255, green: 0.8274509804, blue: 0.7529411765, alpha: 1))
+            
+            viewController.viewModel = ShowAllViewModel(list: viewModel.languages, color: .orange)
             openViewController(viewController)
             
         case is TimeZonesButton:
-            let viewController = DependecyInjectionManager.shared.assembler.resolver.resolve(ShowAllViewController.self)!
-            viewController.viewModel = ShowAllViewModel(list: viewModel.timeZones, color: #colorLiteral(red: 0.7254901961, green: 0.9176470588, blue: 0.7647058824, alpha: 1))
+            viewController.viewModel = ShowAllViewModel(list: viewModel.timeZones, color: .green)
             openViewController(viewController)
             
         case is CallingCodesButton:
-            let viewController = DependecyInjectionManager.shared.assembler.resolver.resolve(ShowAllViewController.self)!
-            viewController.viewModel = ShowAllViewModel(list: viewModel.callingCodes, color: #colorLiteral(red: 0.6509803922, green: 0.9019607843, blue: 0.9921568627, alpha: 1))
+            viewController.viewModel = ShowAllViewModel(list: viewModel.callingCodes, color: .blue)
             openViewController(viewController)
         default:
             break
@@ -119,7 +119,7 @@ class CountryDetailsViewController: UIViewController {
     private func configureStack(_ stack: UIStackView) {
         stack.alignment = .center
         stack.distribution = .fill
-        stack.spacing = Constants.spacing
+        stack.spacing = SizeConstants.spacing
         stack.layoutIfNeeded()
     }
     
@@ -127,12 +127,13 @@ class CountryDetailsViewController: UIViewController {
         label.text = text
         label.backgroundColor = color
         label.layer.masksToBounds = true
-        label.layer.cornerRadius = Constants.cornerRadius
+        label.layer.cornerRadius = label.intrinsicContentSize.height / 2
+        
     }
     
     private func addBackButton() {
         let btnLeftMenu: UIButton = UIButton()
-        let image = UIImage(named: Constants.backImage)
+        let image = UIImage(named: NameConstants.backImage)
         btnLeftMenu.setImage(image, for: .normal)
         btnLeftMenu.sizeToFit()
         btnLeftMenu.addTarget(self, action: #selector (backButtonClick), for: .touchUpInside)

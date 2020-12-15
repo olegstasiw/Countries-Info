@@ -28,7 +28,7 @@ class CountriesListViewController: UIViewController {
     private func setUI() {
         navigationController?.navigationBar.barTintColor = UIColor(red:214/255, green: 194/255, blue: 141/255, alpha: 1)
         let attrs = [
-            NSAttributedString.Key.font: UIFont(name: Constants.roboto, size: 24)!
+            NSAttributedString.Key.font: UIFont(name: NameConstants.roboto, size: 24)!
         ]
 
         navigationController?.navigationBar.titleTextAttributes = attrs
@@ -44,8 +44,8 @@ class CountriesListViewController: UIViewController {
     }
     
     private func registerCell() {
-        let nib = UINib(nibName: Constants.cellId, bundle: nil)
-        countriesCollectionView?.register(nib, forCellWithReuseIdentifier: Constants.cellId)
+        let nib = UINib(nibName: NameConstants.cellId, bundle: nil)
+        countriesCollectionView?.register(nib, forCellWithReuseIdentifier: NameConstants.cellId)
     }
     
     private func configureObservers() {
@@ -66,6 +66,12 @@ class CountriesListViewController: UIViewController {
         topView.layer.masksToBounds = false
     }
     
+    private func moveToViewController(at indexPath: IndexPath) {
+        let detailVC = DependecyInjectionManager.shared.assembler.resolver.resolve(CountryDetailsViewController.self)!
+        detailVC.viewModel = CountryDetailsViewModel(country: viewModel.countries[indexPath.row])
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
+    
 }
 
 extension CountriesListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -75,7 +81,7 @@ extension CountriesListViewController: UICollectionViewDelegate, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = countriesCollectionView.dequeueReusableCell(withReuseIdentifier: Constants.cellId, for: indexPath) as! CountryViewCell
+        let cell = countriesCollectionView.dequeueReusableCell(withReuseIdentifier: NameConstants.cellId, for: indexPath) as! CountryViewCell
         let celViewModel = viewModel.cellViewModel(indexPath: indexPath)
         cell.viewModel = celViewModel
        
@@ -84,30 +90,28 @@ extension CountriesListViewController: UICollectionViewDelegate, UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        let detailVC = DependecyInjectionManager.shared.assembler.resolver.resolve(CountryDetailsViewController.self)!
-        detailVC.viewModel = CountryDetailsViewModel(country: viewModel.countries[indexPath.row])
-        navigationController?.pushViewController(detailVC, animated: true)
+        moveToViewController(at: indexPath)
     }
     
 }
 
 extension CountriesListViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let paddingWidth = Constants.sectionInsets.left * (Constants.itemPerRow + 1)
+        let paddingWidth = EdgeInsetsConstants.sectionInsets.left * (SizeConstants.itemPerRow + 1)
         let availableWidth = countriesCollectionView.frame.width - paddingWidth
-        let widthPerItem = availableWidth / Constants.itemPerRow
-        return CGSize(width: widthPerItem, height: Constants.cellHeight)
+        let widthPerItem = availableWidth / SizeConstants.itemPerRow
+        return CGSize(width: widthPerItem, height: SizeConstants.cellHeight)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return Constants.sectionInsets
+        return EdgeInsetsConstants.sectionInsets
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return Constants.sectionInsets.bottom
+        return EdgeInsetsConstants.sectionInsets.bottom
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return Constants.sectionInsets.left
+        return EdgeInsetsConstants.sectionInsets.left
     }
 }

@@ -94,13 +94,13 @@ class CountryDetailsViewModel: CountryDetailsViewModelProtocol {
     
     private func setPoputation(population: Double) -> String {
         var number = population
-        if population > Constants.million {
-            number /= Constants.million
+        if population > StaticValueConstants.million {
+            number /= StaticValueConstants.million
             let str = String(number.rounded(toPlaces: 2)) + " m"
             return str.replacingOccurrences(of: ".", with: ",")
             
         } else {
-            number /= Constants.thousand
+            number /= StaticValueConstants.thousand
             let str = String(number.rounded(toPlaces: 2)) + " k"
             return str.replacingOccurrences(of: ".", with: ",")
         }

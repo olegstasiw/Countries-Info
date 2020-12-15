@@ -6,21 +6,21 @@
 //
 
 import Foundation
-import UIKit
 
 protocol ShowAllViewModelProtocol {
     var list: [String] { get }
-    var color: UIColor { get }
+    var color: NewColor { get }
     
-    init(list: [String], color: UIColor)
+    init(list: [String], color: NewColor)
 }
 
 class ShowAllViewModel: ShowAllViewModelProtocol {
+    
+    var color: NewColor
     var list: [String]
     
-    var color: UIColor
     
-    required init(list: [String], color: UIColor) {
+    required init(list: [String], color: NewColor) {
         self.list = list
         self.color = color
     }

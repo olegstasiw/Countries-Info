@@ -7,15 +7,10 @@
 
 import UIKit
 
-class CurrenciesButton: UIButton {
-    
-}
-class LanguagesButton: UIButton {
-    
-}
-class TimeZonesButton: UIButton {
-    
-}
-class CallingCodesButton: UIButton {
-    
-}
+class CurrenciesButton: UIButton { }
+
+class LanguagesButton: UIButton { }
+
+class TimeZonesButton: UIButton { }
+
+class CallingCodesButton: UIButton { }
