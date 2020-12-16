@@ -1,6 +1,7 @@
 query AllCountries {
   Country {
     name
+    alpha2Code
     capital
     subregion {
       region {
@@ -19,9 +20,6 @@ query AllCountries {
     }
     callingCodes {
       name
-    }
-    flag {
-      svgFile
     }
   }
 }

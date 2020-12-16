@@ -15,11 +15,11 @@ struct Country: Codable {
     let officialLanguages: [OfficialLanguage]
     let timezones: [Timezone]
     let callingCodes: [CallingCode]
-    let flag: Flag
+    let alpha2Code: String
     let subregion: Subregion?
     
     private enum CodingKeys: String, CodingKey {
-        case name, capital, population, currencies, officialLanguages, timezones, callingCodes, flag, subregion
+        case name, capital, population, currencies, officialLanguages, timezones, callingCodes, subregion, alpha2Code
     }
     
     public init(from decoder: Decoder) throws {
@@ -31,7 +31,7 @@ struct Country: Codable {
         officialLanguages = try container.decode([OfficialLanguage].self, forKey: .officialLanguages)
         timezones = try container.decode([Timezone].self, forKey: .timezones)
         callingCodes = try container.decode([CallingCode].self, forKey: .callingCodes)
-        flag = try container.decode(Flag.self, forKey: .flag)
+        alpha2Code = try container.decode(String.self, forKey: .alpha2Code)
         subregion = try container.decode(Subregion?.self, forKey: .subregion)
     }
     
@@ -44,7 +44,7 @@ struct Country: Codable {
         try container.encode(officialLanguages, forKey: .officialLanguages)
         try container.encode(timezones, forKey: .timezones)
         try container.encode(callingCodes, forKey: .callingCodes)
-        try container.encode(flag, forKey: .flag)
+        try container.encode(alpha2Code, forKey: .alpha2Code)
         try container.encode(subregion, forKey: .subregion)
     }
 }
@@ -120,25 +120,6 @@ struct CallingCode: Codable {
         try container.encode(name, forKey: .name)
     }
 }
-
-struct Flag: Codable {
-    let svgFile: String
-    
-    private enum CodingKeys: String, CodingKey {
-        case svgFile
-    }
-    
-    public init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        svgFile = try container.decode(String.self, forKey: .svgFile)
-    }
-    
-    public func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(svgFile, forKey: .svgFile)
-    }
-}
-
 
 struct Subregion: Codable {
     let region: Region

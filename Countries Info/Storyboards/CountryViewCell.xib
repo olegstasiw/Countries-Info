@@ -86,7 +86,7 @@
                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="K1l-2a-wH2">
                         <rect key="frame" x="238" y="90.5" width="37" height="37"/>
                     </activityIndicatorView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 14" translatesAutoresizingMaskIntoConstraints="NO" id="2hC-xN-40k">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2hC-xN-40k">
                         <rect key="frame" x="20" y="20" width="353" height="178"/>
                     </imageView>
                 </subviews>
@@ -115,7 +115,4 @@
             <point key="canvasLocation" x="141.30434782608697" y="166.74107142857142"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="Rectangle 14" width="223" height="140"/>
-    </resources>
 </document>

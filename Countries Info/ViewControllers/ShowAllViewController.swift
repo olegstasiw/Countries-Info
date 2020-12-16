@@ -27,6 +27,15 @@ class ShowAllViewController: UIViewController {
     private func setUI() {
         closeButton.layer.cornerRadius = closeButton.frame.height / 2
         contentView.layer.cornerRadius = SizeConstants.cornerRadius
+        makeBackgroundColor(color: viewModel.color, in: closeButton)
+    }
+    
+    private func makeBackgroundColor(color: NewColor, in button: UIButton) {
+        let color = UIColor(red: color.color.red,
+                            green: color.color.green,
+                            blue: color.color.blue,
+                            alpha: 1)
+        button.backgroundColor = color
     }
     private func makeBlur() {
         let blurFx = UIBlurEffect(style: UIBlurEffect.Style.dark)

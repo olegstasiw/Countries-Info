@@ -12,6 +12,7 @@ public final class AllCountriesQuery: GraphQLQuery {
       Country {
         __typename
         name
+        alpha2Code
         capital
         subregion {
           __typename
@@ -36,10 +37,6 @@ public final class AllCountriesQuery: GraphQLQuery {
         callingCodes {
           __typename
           name
-        }
-        flag {
-          __typename
-          svgFile
         }
       }
     }
@@ -85,6 +82,7 @@ public final class AllCountriesQuery: GraphQLQuery {
         return [
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
           GraphQLField("name", type: .nonNull(.scalar(String.self))),
+          GraphQLField("alpha2Code", type: .nonNull(.scalar(String.self))),
           GraphQLField("capital", type: .nonNull(.scalar(String.self))),
           GraphQLField("subregion", type: .object(Subregion.selections)),
           GraphQLField("population", type: .nonNull(.scalar(Double.self))),
@@ -92,7 +90,6 @@ public final class AllCountriesQuery: GraphQLQuery {
           GraphQLField("officialLanguages", type: .list(.object(OfficialLanguage.selections))),
           GraphQLField("timezones", type: .list(.object(Timezone.selections))),
           GraphQLField("callingCodes", type: .list(.object(CallingCode.selections))),
-          GraphQLField("flag", type: .object(Flag.selections)),
         ]
       }
 
@@ -102,8 +99,8 @@ public final class AllCountriesQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(name: String, capital: String, subregion: Subregion? = nil, population: Double, currencies: [Currency?]? = nil, officialLanguages: [OfficialLanguage?]? = nil, timezones: [Timezone?]? = nil, callingCodes: [CallingCode?]? = nil, flag: Flag? = nil) {
-        self.init(unsafeResultMap: ["__typename": "Country", "name": name, "capital": capital, "subregion": subregion.flatMap { (value: Subregion) -> ResultMap in value.resultMap }, "population": population, "currencies": currencies.flatMap { (value: [Currency?]) -> [ResultMap?] in value.map { (value: Currency?) -> ResultMap? in value.flatMap { (value: Currency) -> ResultMap in value.resultMap } } }, "officialLanguages": officialLanguages.flatMap { (value: [OfficialLanguage?]) -> [ResultMap?] in value.map { (value: OfficialLanguage?) -> ResultMap? in value.flatMap { (value: OfficialLanguage) -> ResultMap in value.resultMap } } }, "timezones": timezones.flatMap { (value: [Timezone?]) -> [ResultMap?] in value.map { (value: Timezone?) -> ResultMap? in value.flatMap { (value: Timezone) -> ResultMap in value.resultMap } } }, "callingCodes": callingCodes.flatMap { (value: [CallingCode?]) -> [ResultMap?] in value.map { (value: CallingCode?) -> ResultMap? in value.flatMap { (value: CallingCode) -> ResultMap in value.resultMap } } }, "flag": flag.flatMap { (value: Flag) -> ResultMap in value.resultMap }])
+      public init(name: String, alpha2Code: String, capital: String, subregion: Subregion? = nil, population: Double, currencies: [Currency?]? = nil, officialLanguages: [OfficialLanguage?]? = nil, timezones: [Timezone?]? = nil, callingCodes: [CallingCode?]? = nil) {
+        self.init(unsafeResultMap: ["__typename": "Country", "name": name, "alpha2Code": alpha2Code, "capital": capital, "subregion": subregion.flatMap { (value: Subregion) -> ResultMap in value.resultMap }, "population": population, "currencies": currencies.flatMap { (value: [Currency?]) -> [ResultMap?] in value.map { (value: Currency?) -> ResultMap? in value.flatMap { (value: Currency) -> ResultMap in value.resultMap } } }, "officialLanguages": officialLanguages.flatMap { (value: [OfficialLanguage?]) -> [ResultMap?] in value.map { (value: OfficialLanguage?) -> ResultMap? in value.flatMap { (value: OfficialLanguage) -> ResultMap in value.resultMap } } }, "timezones": timezones.flatMap { (value: [Timezone?]) -> [ResultMap?] in value.map { (value: Timezone?) -> ResultMap? in value.flatMap { (value: Timezone) -> ResultMap in value.resultMap } } }, "callingCodes": callingCodes.flatMap { (value: [CallingCode?]) -> [ResultMap?] in value.map { (value: CallingCode?) -> ResultMap? in value.flatMap { (value: CallingCode) -> ResultMap in value.resultMap } } }])
       }
 
       public var __typename: String {
@@ -121,6 +118,16 @@ public final class AllCountriesQuery: GraphQLQuery {
         }
         set {
           resultMap.updateValue(newValue, forKey: "name")
+        }
+      }
+
+      /// ISO 3166-1 alpha-2 codes are two-letter country codes defined in ISO 3166-1, part of the ISO 3166 standard published by the International Organization for Standardization (ISO), to represent countries, dependent territories, and special areas of geographical interest. https://en.m.wikipedia.org/wiki/ISO_3166-1_alpha-2
+      public var alpha2Code: String {
+        get {
+          return resultMap["alpha2Code"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "alpha2Code")
         }
       }
 
@@ -184,15 +191,6 @@ public final class AllCountriesQuery: GraphQLQuery {
         }
         set {
           resultMap.updateValue(newValue.flatMap { (value: [CallingCode?]) -> [ResultMap?] in value.map { (value: CallingCode?) -> ResultMap? in value.flatMap { (value: CallingCode) -> ResultMap in value.resultMap } } }, forKey: "callingCodes")
-        }
-      }
-
-      public var flag: Flag? {
-        get {
-          return (resultMap["flag"] as? ResultMap).flatMap { Flag(unsafeResultMap: $0) }
-        }
-        set {
-          resultMap.updateValue(newValue?.resultMap, forKey: "flag")
         }
       }
 
@@ -426,45 +424,6 @@ public final class AllCountriesQuery: GraphQLQuery {
           }
           set {
             resultMap.updateValue(newValue, forKey: "name")
-          }
-        }
-      }
-
-      public struct Flag: GraphQLSelectionSet {
-        public static let possibleTypes: [String] = ["Flag"]
-
-        public static var selections: [GraphQLSelection] {
-          return [
-            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-            GraphQLField("svgFile", type: .nonNull(.scalar(String.self))),
-          ]
-        }
-
-        public private(set) var resultMap: ResultMap
-
-        public init(unsafeResultMap: ResultMap) {
-          self.resultMap = unsafeResultMap
-        }
-
-        public init(svgFile: String) {
-          self.init(unsafeResultMap: ["__typename": "Flag", "svgFile": svgFile])
-        }
-
-        public var __typename: String {
-          get {
-            return resultMap["__typename"]! as! String
-          }
-          set {
-            resultMap.updateValue(newValue, forKey: "__typename")
-          }
-        }
-
-        public var svgFile: String {
-          get {
-            return resultMap["svgFile"]! as! String
-          }
-          set {
-            resultMap.updateValue(newValue, forKey: "svgFile")
           }
         }
       }

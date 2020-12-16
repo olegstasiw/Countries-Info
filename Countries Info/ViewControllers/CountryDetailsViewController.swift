@@ -8,7 +8,7 @@ import UIKit
 
 class CountryDetailsViewController: UIViewController {
     
-    
+    @IBOutlet weak var flagImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var capitalLabel: UILabel!
     @IBOutlet weak var regionLabel: UILabel!
@@ -25,6 +25,11 @@ class CountryDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configure()
+        setUI()
+    }
+    
+    private func configure() {
         nameLabel.text = viewModel.countryName
         capitalLabel.text = viewModel.capital
         regionLabel.text = viewModel.region
@@ -34,49 +39,64 @@ class CountryDetailsViewController: UIViewController {
         setValue(allResults: viewModel.timeZones, stack: timesZonesStack, color: #colorLiteral(red: 0.7254901961, green: 0.9176470588, blue: 0.7647058824, alpha: 1), buttonType: TimeZonesButton.self)
         setValue(allResults: viewModel.callingCodes, stack: callingCodesStack, color: #colorLiteral(red: 0.6509803922, green: 0.9019607843, blue: 0.9921568627, alpha: 1), buttonType: CallingCodesButton.self)
         
-        setUI()
+        DispatchQueue.global().async {
+            self.imageGenerator(code: self.viewModel.alpha2Code) { (data) in
+                DispatchQueue.main.async {
+                    if let imageData = data {
+                        self.flagImageView.image = UIImage(data: imageData)
+                    } else {
+                        self.flagImageView.image = UIImage(named: NameConstants.unknownFlagImage)
+                    }
+                }
+            }
+        }
+    }
+    
+    private func imageGenerator(code: String?, completion: @escaping (Data?) -> Void) {
+        if let string = code {
+            guard let url = URL(string: "\(NameConstants.imageURL)\(string)\(NameConstants.imageExtension)") else { return }
+            let data = try? Data(contentsOf: url)
+            completion(data)
+        }
     }
     
     private func setUI() {
         addBackButton()
         colorViews.forEach { $0.layer.cornerRadius = $0.frame.height / 2 }
+        flagImageView.layer.cornerRadius = SizeConstants.imageCornerRadius
     }
     
     private func setValue(allResults: [String], stack: UIStackView, color: UIColor, buttonType: UIButton.Type) {
         let allResultButton = buttonType.init()
-        setupButton(allResultButton)
+        setupButton(allResultButton, color: color)
         
         var width: CGFloat = allResultButton.intrinsicContentSize.width + SizeConstants.spacing
         configureStack(stack)
         
-        let label = PaddingLabel(EdgeInsetsConstants.labelEdgeInsetsForShowAllScreen)
-
         for text in allResults {
-                configureLabel(label: label, text: text, color: color)
-                width += label.intrinsicContentSize.width + SizeConstants.spacing
-                if width < stack.frame.width {
-                    stack.addArrangedSubview(label)
-                } else {
-                    stack.addArrangedSubview(allResultButton)
-                    addSpasingView(to: stack)
-                    break
-                }
-            }
-            if allResultButton.superview == nil {
+            let label = PaddingLabel(EdgeInsetsConstants.labelEdgeInsetsForShowAllScreen)
+            configureLabel(label: label, text: text, color: color)
+            width += label.intrinsicContentSize.width + SizeConstants.spacing
+            if width < stack.frame.width {
+                stack.addArrangedSubview(label)
+            } else {
+                stack.addArrangedSubview(allResultButton)
                 addSpasingView(to: stack)
+                break
             }
+        }
+        if allResultButton.superview == nil {
+            addSpasingView(to: stack)
+        }
     }
     
-    private func setupButton(_ button: UIButton) {
+    private func setupButton(_ button: UIButton, color: UIColor) {
         button.contentEdgeInsets = EdgeInsetsConstants.buttonEdgeInsets
         button.layer.cornerRadius = SizeConstants.cornerRadius
-        let origImage = UIImage(named: NameConstants.dotsImage)
-        let tintedImage = origImage?.withRenderingMode(.alwaysTemplate)
-        button.setImage(tintedImage, for: .normal)
+        button.setImage(UIImage(named: NameConstants.dotsImage), for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
         button.imageEdgeInsets = EdgeInsetsConstants.buttonImageEdgeInsets
-        button.tintColor = .white
-        button.backgroundColor = .systemBlue
+        button.backgroundColor = color
         button.addTarget(self, action: #selector(showAll(sender:)), for: .touchUpInside)
     }
     
@@ -138,7 +158,7 @@ class CountryDetailsViewController: UIViewController {
         let barButton = UIBarButtonItem(customView: btnLeftMenu)
         self.navigationItem.leftBarButtonItem = barButton
     }
-
+    
     @objc private func backButtonClick() {
         self.navigationController?.popViewController(animated: true)
     }
