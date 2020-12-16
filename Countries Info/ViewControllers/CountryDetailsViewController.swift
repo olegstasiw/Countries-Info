@@ -19,6 +19,7 @@ class CountryDetailsViewController: UIViewController {
     @IBOutlet weak var timesZonesStack: UIStackView!
     @IBOutlet weak var callingCodesStack: UIStackView!
     
+    @IBOutlet weak var topView: UIView!
     @IBOutlet var colorViews: [UIView]!
     
     var viewModel: CountryDetailsViewModelProtocol!
@@ -64,6 +65,16 @@ class CountryDetailsViewController: UIViewController {
         addBackButton()
         colorViews.forEach { $0.layer.cornerRadius = $0.frame.height / 2 }
         flagImageView.layer.cornerRadius = SizeConstants.imageCornerRadius
+        setShadow()
+    }
+    
+    private func setShadow() {
+        topView.layer.borderWidth = 0.0
+        topView.layer.borderColor = UIColor.lightGray.cgColor
+        topView.layer.shadowColor = UIColor.lightGray.cgColor
+        topView.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
+        topView.layer.shadowOpacity = 0.1
+        topView.layer.masksToBounds = false
     }
     
     private func setValue(allResults: [String], stack: UIStackView, color: UIColor, buttonType: UIButton.Type) {

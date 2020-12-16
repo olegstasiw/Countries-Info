@@ -59,9 +59,10 @@ class CountriesListViewController: UIViewController {
     }
     
     private func setShadow() {
+        topView.layer.borderWidth = 0.0
         topView.layer.borderColor = UIColor.lightGray.cgColor
-        topView.layer.backgroundColor = UIColor.white.cgColor
-        topView.layer.shadowOffset = CGSize(width: 1.0, height: 2.0)
+        topView.layer.shadowColor = UIColor.lightGray.cgColor
+        topView.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
         topView.layer.shadowOpacity = 0.1
         topView.layer.masksToBounds = false
     }
