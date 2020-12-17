@@ -22,6 +22,7 @@ class CountryViewCell: UICollectionViewCell {
             configure()
         }
     }
+    var factory: ImageFactoryProtocol?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,7 +34,7 @@ class CountryViewCell: UICollectionViewCell {
         capitalLabel.text = viewModel?.capital
         regionLabel.text = viewModel?.region
         DispatchQueue.global().async {
-            self.imageGenerator(code: self.viewModel?.alpha2Code) { (data) in
+            self.factory?.imageGenerator(code: self.viewModel?.alpha2Code) { (data) in
                 DispatchQueue.main.async {
                     if let imageData = data {
                         self.flagImageView.image = UIImage(data: imageData)
@@ -47,15 +48,6 @@ class CountryViewCell: UICollectionViewCell {
             }
         }
     }
-    
-    private func imageGenerator(code: String?, completion: @escaping (Data?) -> Void) {
-        if let string = code {
-            guard let url = URL(string: "\(NameConstants.imageURL)\(string)\(NameConstants.imageExtension)") else { return }
-            let data = try? Data(contentsOf: url)
-            completion(data)
-        }
-    }
-    
     
     private func setUI() {
         setShadow()

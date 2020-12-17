@@ -69,6 +69,7 @@ class CountriesListViewController: UIViewController {
     
     private func moveToViewController(at indexPath: IndexPath) {
         let detailVC = DependecyInjectionManager.shared.assembler.resolver.resolve(CountryDetailsViewController.self)!
+        detailVC.factory = DependecyInjectionManager.shared.assembler.resolver.resolve(ImageFactoryProtocol.self)
         detailVC.viewModel = CountryDetailsViewModel(country: viewModel.countries[indexPath.row])
         navigationController?.pushViewController(detailVC, animated: true)
     }
@@ -84,6 +85,7 @@ extension CountriesListViewController: UICollectionViewDelegate, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = countriesCollectionView.dequeueReusableCell(withReuseIdentifier: NameConstants.cellId, for: indexPath) as! CountryViewCell
         let celViewModel = viewModel.cellViewModel(indexPath: indexPath)
+        cell.factory = DependecyInjectionManager.shared.assembler.resolver.resolve(ImageFactoryProtocol.self)
         cell.viewModel = celViewModel
        
         return cell

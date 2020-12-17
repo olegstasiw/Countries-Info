@@ -25,6 +25,8 @@
 		316662032577A16100FBD84F /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 316662022577A16100FBD84F /* Swinject */; };
 		316697D6258A0E1C008DB420 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316697D5258A0E1C008DB420 /* API.swift */; };
 		316697DB258A1FDB008DB420 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 316697D9258A1E96008DB420 /* Roboto-Regular.ttf */; };
+		318A0406258B528B009613B5 /* ImageFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318A0405258B528B009613B5 /* ImageFactory.swift */; };
+		318A0408258B5B8C009613B5 /* FactoryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318A0407258B5B8C009613B5 /* FactoryAssembly.swift */; };
 		3194F6892577BA8C00FA6398 /* CountriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194F6882577BA8C00FA6398 /* CountriesListViewController.swift */; };
 		3194F6922577FFFF00FA6398 /* ApolloAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194F6912577FFFF00FA6398 /* ApolloAssembly.swift */; };
 		3194F6962578000A00FA6398 /* ViewControllersAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194F6952578000A00FA6398 /* ViewControllersAssembly.swift */; };
@@ -74,6 +76,8 @@
 		316697D5258A0E1C008DB420 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		316697D9258A1E96008DB420 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		316697DA258A1E9B008DB420 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		318A0405258B528B009613B5 /* ImageFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFactory.swift; sourceTree = "<group>"; };
+		318A0407258B5B8C009613B5 /* FactoryAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoryAssembly.swift; sourceTree = "<group>"; };
 		3194F6882577BA8C00FA6398 /* CountriesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListViewController.swift; sourceTree = "<group>"; };
 		3194F6912577FFFF00FA6398 /* ApolloAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloAssembly.swift; sourceTree = "<group>"; };
 		3194F6952578000A00FA6398 /* ViewControllersAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllersAssembly.swift; sourceTree = "<group>"; };
@@ -122,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				31D0494F256FF3C9005C82B2 /* Model */,
+				318A0404258B526E009613B5 /* Factories */,
 				31D04947256FF16E005C82B2 /* ViewControllers */,
 				316661F0257794F500FBD84F /* ViewModels */,
 				31D0494A256FF1A9005C82B2 /* Managers */,
@@ -184,11 +189,20 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		318A0404258B526E009613B5 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				318A0405258B528B009613B5 /* ImageFactory.swift */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
 		3194F6902577FFC300FA6398 /* Asseblies */ = {
 			isa = PBXGroup;
 			children = (
 				3194F6912577FFFF00FA6398 /* ApolloAssembly.swift */,
 				3194F6952578000A00FA6398 /* ViewControllersAssembly.swift */,
+				318A0407258B5B8C009613B5 /* FactoryAssembly.swift */,
 			);
 			path = Asseblies;
 			sourceTree = "<group>";
@@ -380,6 +394,8 @@
 				3114B0EF2577A5D1009BAB2C /* CountriesListViewModel.swift in Sources */,
 				3114B0F32577A62B009BAB2C /* CountryCollectionViewCellViewModel.swift in Sources */,
 				3194F6892577BA8C00FA6398 /* CountriesListViewController.swift in Sources */,
+				318A0406258B528B009613B5 /* ImageFactory.swift in Sources */,
+				318A0408258B5B8C009613B5 /* FactoryAssembly.swift in Sources */,
 				313B2EF62583952900BEA636 /* ShowAllViewModel.swift in Sources */,
 				31543632257E64B90079CDA6 /* Constants.swift in Sources */,
 				31B33383257F88A8000A8673 /* CountryDetailsViewController.swift in Sources */,

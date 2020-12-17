@@ -23,6 +23,7 @@ class CountryDetailsViewController: UIViewController {
     @IBOutlet var colorViews: [UIView]!
     
     var viewModel: CountryDetailsViewModelProtocol!
+    var factory: ImageFactoryProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +42,7 @@ class CountryDetailsViewController: UIViewController {
         setValue(allResults: viewModel.callingCodes, stack: callingCodesStack, color: #colorLiteral(red: 0.6509803922, green: 0.9019607843, blue: 0.9921568627, alpha: 1), buttonType: CallingCodesButton.self)
         
         DispatchQueue.global().async {
-            self.imageGenerator(code: self.viewModel.alpha2Code) { (data) in
+            self.factory?.imageGenerator(code: self.viewModel.alpha2Code) { (data) in
                 DispatchQueue.main.async {
                     if let imageData = data {
                         self.flagImageView.image = UIImage(data: imageData)
@@ -50,14 +51,6 @@ class CountryDetailsViewController: UIViewController {
                     }
                 }
             }
-        }
-    }
-    
-    private func imageGenerator(code: String?, completion: @escaping (Data?) -> Void) {
-        if let string = code {
-            guard let url = URL(string: "\(NameConstants.imageURL)\(string)\(NameConstants.imageExtension)") else { return }
-            let data = try? Data(contentsOf: url)
-            completion(data)
         }
     }
     
