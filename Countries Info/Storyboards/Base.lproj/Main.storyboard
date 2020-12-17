@@ -135,7 +135,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0fD-ve-Htu">
-                                <rect key="frame" x="0.0" y="259" width="375" height="519"/>
+                                <rect key="frame" x="0.0" y="259" width="375" height="553"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xvo-Qc-uwS">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1001"/>
@@ -682,7 +682,7 @@
                             <constraint firstItem="0fD-ve-Htu" firstAttribute="top" secondItem="wCM-Np-nSK" secondAttribute="bottom" id="9sD-qe-Wmv"/>
                             <constraint firstItem="wFK-cq-6dG" firstAttribute="trailing" secondItem="0fD-ve-Htu" secondAttribute="trailing" id="Hq3-G2-R2m"/>
                             <constraint firstItem="0fD-ve-Htu" firstAttribute="leading" secondItem="wFK-cq-6dG" secondAttribute="leading" id="JK5-2e-FFH"/>
-                            <constraint firstItem="wFK-cq-6dG" firstAttribute="bottom" secondItem="0fD-ve-Htu" secondAttribute="bottom" id="tbh-3B-tVf"/>
+                            <constraint firstAttribute="bottom" secondItem="0fD-ve-Htu" secondAttribute="bottom" id="tbh-3B-tVf"/>
                             <constraint firstItem="wFK-cq-6dG" firstAttribute="trailing" secondItem="wCM-Np-nSK" secondAttribute="trailing" id="ycN-eR-GHn"/>
                         </constraints>
                     </view>
