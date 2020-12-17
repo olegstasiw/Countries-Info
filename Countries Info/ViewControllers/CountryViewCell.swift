@@ -8,7 +8,7 @@
 import UIKit
 
 class CountryViewCell: UICollectionViewCell {
-
+    
     @IBOutlet weak var countryNameLabel: UILabel!
     @IBOutlet weak var capitalLabel: UILabel!
     @IBOutlet weak var regionLabel: UILabel!
@@ -16,24 +16,37 @@ class CountryViewCell: UICollectionViewCell {
     @IBOutlet weak var flagImageView: UIImageView!
     @IBOutlet weak var countryStack: UIStackView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-
+    
     var viewModel: CountryCollectionViewCellViewModelProtocol? {
         didSet {
-                countryNameLabel.text = self.viewModel?.countryName
-                capitalLabel.text = self.viewModel?.capital
-                regionLabel.text = self.viewModel?.region
-                
-                if self.viewModel != nil {
-                    activityIndicator.stopAnimating()
-                    countryStack.isHidden = false
-                    flagImageView.isHidden = false
-                }  
+            configure()
         }
     }
-
+    var factory: ImageFactoryProtocol?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setUI()
+    }
+    
+    private func configure() {
+        countryNameLabel.text = viewModel?.countryName
+        capitalLabel.text = viewModel?.capital
+        regionLabel.text = viewModel?.region
+        DispatchQueue.global().async {
+            self.factory?.imageGenerator(code: self.viewModel?.alpha2Code) { (data) in
+                DispatchQueue.main.async {
+                    if let imageData = data {
+                        self.flagImageView.image = UIImage(data: imageData)
+                    } else {
+                        self.flagImageView.image = UIImage(named: NameConstants.unknownFlagImage)
+                    }
+                    self.activityIndicator.stopAnimating()
+                    self.countryStack.isHidden = false
+                    self.flagImageView.isHidden = false
+                }
+            }
+        }
     }
     
     private func setUI() {
@@ -57,7 +70,7 @@ class CountryViewCell: UICollectionViewCell {
         self.layer.cornerRadius = SizeConstants.cornerRadius
         self.layer.borderWidth = 0.0
         self.layer.borderColor = UIColor.lightGray.cgColor
-
+        
         self.layer.backgroundColor = UIColor.white.cgColor
         self.layer.shadowColor = UIColor.gray.cgColor
         self.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)

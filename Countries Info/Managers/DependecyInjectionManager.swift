@@ -13,7 +13,8 @@ class DependecyInjectionManager {
     
     let assembler = Assembler([
         ApolloAssembly(),
-        ViewControllersAssembly()
+        ViewControllersAssembly(),
+        FactoryAssembly()
     ])
     
 }

@@ -59,15 +59,17 @@ class CountriesListViewController: UIViewController {
     }
     
     private func setShadow() {
+        topView.layer.borderWidth = 0.0
         topView.layer.borderColor = UIColor.lightGray.cgColor
-        topView.layer.backgroundColor = UIColor.white.cgColor
-        topView.layer.shadowOffset = CGSize(width: 1.0, height: 2.0)
+        topView.layer.shadowColor = UIColor.lightGray.cgColor
+        topView.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
         topView.layer.shadowOpacity = 0.1
         topView.layer.masksToBounds = false
     }
     
     private func moveToViewController(at indexPath: IndexPath) {
         let detailVC = DependecyInjectionManager.shared.assembler.resolver.resolve(CountryDetailsViewController.self)!
+        detailVC.factory = DependecyInjectionManager.shared.assembler.resolver.resolve(ImageFactoryProtocol.self)
         detailVC.viewModel = CountryDetailsViewModel(country: viewModel.countries[indexPath.row])
         navigationController?.pushViewController(detailVC, animated: true)
     }
@@ -83,6 +85,7 @@ extension CountriesListViewController: UICollectionViewDelegate, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = countriesCollectionView.dequeueReusableCell(withReuseIdentifier: NameConstants.cellId, for: indexPath) as! CountryViewCell
         let celViewModel = viewModel.cellViewModel(indexPath: indexPath)
+        cell.factory = DependecyInjectionManager.shared.assembler.resolver.resolve(ImageFactoryProtocol.self)
         cell.viewModel = celViewModel
        
         return cell

@@ -16,7 +16,7 @@ protocol CountryDetailsViewModelProtocol {
     var languages: [String] { get }
     var timeZones: [String] { get }
     var callingCodes: [String] { get }
-    var flag: String? { get }
+    var alpha2Code: String { get }
     
     init(country: Country)
 }
@@ -24,13 +24,15 @@ protocol CountryDetailsViewModelProtocol {
 class CountryDetailsViewModel: CountryDetailsViewModelProtocol {
     
     var countryName: String {
-        country.name
+        if country.name == "" { return "No name" }
+        return country.name
     }
     var capital: String {
-        country.capital
+        if country.capital == "" { return "No capital" }
+        return country.capital
     }
     var region: String {
-        country.subregion?.region.name ?? ""
+        country.subregion?.region.name ?? "No region"
     }
     var population: String {
         String(setPoputation(population: country.population))
@@ -39,26 +41,30 @@ class CountryDetailsViewModel: CountryDetailsViewModelProtocol {
     var currencies: [String] {
         var array: [String] = []
         country.currencies.forEach { array.append($0.name) }
+        if array.isEmpty { return ["No currencies"] }
         return array
     }
     
     var languages: [String] {
         var array: [String] = []
         country.officialLanguages.forEach { array.append($0.name) }
+        if array.isEmpty { return ["No languages"] }
         return array
     }
     var timeZones: [String] {
         var array: [String] = []
         country.timezones.forEach { array.append(setGMTTimeZone(zone: $0.name)) }
+        if array.isEmpty { return ["No time zones"] }
         return array
     }
     var callingCodes: [String] {
         var array: [String] = []
         country.callingCodes.forEach { array.append("+\($0.name)") }
+        if array.isEmpty { return ["No calling codes"] }
         return array
     }
-    var flag: String? {
-        return country.flag.svgFile
+    var alpha2Code: String {
+        return country.alpha2Code.lowercased()
     }
     
     private let country: Country

@@ -18,13 +18,15 @@
 		313B2EF42583819B00BEA636 /* ShowAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313B2EF32583819B00BEA636 /* ShowAllViewController.swift */; };
 		313B2EF62583952900BEA636 /* ShowAllViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313B2EF52583952900BEA636 /* ShowAllViewModel.swift */; };
 		3147266A25836E6000F2238D /* Double + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3147266925836E6000F2238D /* Double + Extension.swift */; };
-		3150E7952578FCEF007EB537 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3150E7902578F94E007EB537 /* Roboto-Regular.ttf */; };
 		31510C2C2576686B00780ECD /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31510C2B2576686B00780ECD /* Country.swift */; };
-		31510C302576862700780ECD /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31510C2F2576862700780ECD /* API.swift */; };
 		31543632257E64B90079CDA6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31543631257E64B90079CDA6 /* Constants.swift */; };
 		315D49CD2579108800CADFC8 /* CountryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315D49CB2579108800CADFC8 /* CountryViewCell.swift */; };
 		315D49CE2579108800CADFC8 /* CountryViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 315D49CC2579108800CADFC8 /* CountryViewCell.xib */; };
 		316662032577A16100FBD84F /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 316662022577A16100FBD84F /* Swinject */; };
+		316697D6258A0E1C008DB420 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316697D5258A0E1C008DB420 /* API.swift */; };
+		316697DB258A1FDB008DB420 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 316697D9258A1E96008DB420 /* Roboto-Regular.ttf */; };
+		318A0406258B528B009613B5 /* ImageFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318A0405258B528B009613B5 /* ImageFactory.swift */; };
+		318A0408258B5B8C009613B5 /* FactoryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318A0407258B5B8C009613B5 /* FactoryAssembly.swift */; };
 		3194F6892577BA8C00FA6398 /* CountriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194F6882577BA8C00FA6398 /* CountriesListViewController.swift */; };
 		3194F6922577FFFF00FA6398 /* ApolloAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194F6912577FFFF00FA6398 /* ApolloAssembly.swift */; };
 		3194F6962578000A00FA6398 /* ViewControllersAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194F6952578000A00FA6398 /* ViewControllersAssembly.swift */; };
@@ -67,18 +69,20 @@
 		313B2EF32583819B00BEA636 /* ShowAllViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAllViewController.swift; sourceTree = "<group>"; };
 		313B2EF52583952900BEA636 /* ShowAllViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAllViewModel.swift; sourceTree = "<group>"; };
 		3147266925836E6000F2238D /* Double + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double + Extension.swift"; sourceTree = "<group>"; };
-		3150E7902578F94E007EB537 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		31510C2B2576686B00780ECD /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
-		31510C2F2576862700780ECD /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		31543631257E64B90079CDA6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		315D49CB2579108800CADFC8 /* CountryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewCell.swift; sourceTree = "<group>"; };
 		315D49CC2579108800CADFC8 /* CountryViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryViewCell.xib; sourceTree = "<group>"; };
+		316697D5258A0E1C008DB420 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		316697D9258A1E96008DB420 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		316697DA258A1E9B008DB420 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		318A0405258B528B009613B5 /* ImageFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFactory.swift; sourceTree = "<group>"; };
+		318A0407258B5B8C009613B5 /* FactoryAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoryAssembly.swift; sourceTree = "<group>"; };
 		3194F6882577BA8C00FA6398 /* CountriesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListViewController.swift; sourceTree = "<group>"; };
 		3194F6912577FFFF00FA6398 /* ApolloAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloAssembly.swift; sourceTree = "<group>"; };
 		3194F6952578000A00FA6398 /* ViewControllersAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllersAssembly.swift; sourceTree = "<group>"; };
 		31B33382257F88A8000A8673 /* CountryDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailsViewController.swift; sourceTree = "<group>"; };
 		31B33386257F8906000A8673 /* CountryDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailsViewModel.swift; sourceTree = "<group>"; };
-		31C8E08C257D37B200415139 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		31C8E08E257D4ED700415139 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 		31D04934256FE998005C82B2 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		31D04937256FE9B4005C82B2 /* Queries.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Queries.graphql; sourceTree = "<group>"; };
@@ -122,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				31D0494F256FF3C9005C82B2 /* Model */,
+				318A0404258B526E009613B5 /* Factories */,
 				31D04947256FF16E005C82B2 /* ViewControllers */,
 				316661F0257794F500FBD84F /* ViewModels */,
 				31D0494A256FF1A9005C82B2 /* Managers */,
@@ -150,8 +155,8 @@
 		3150E78F2578F910007EB537 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				31C8E08C257D37B200415139 /* Roboto-Bold.ttf */,
-				3150E7902578F94E007EB537 /* Roboto-Regular.ttf */,
+				316697DA258A1E9B008DB420 /* Roboto-Bold.ttf */,
+				316697D9258A1E96008DB420 /* Roboto-Regular.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -167,7 +172,7 @@
 		31510C242576668F00780ECD /* AllCountriesQuery */ = {
 			isa = PBXGroup;
 			children = (
-				31510C2F2576862700780ECD /* API.swift */,
+				316697D5258A0E1C008DB420 /* API.swift */,
 				31D04937256FE9B4005C82B2 /* Queries.graphql */,
 			);
 			path = AllCountriesQuery;
@@ -184,11 +189,20 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		318A0404258B526E009613B5 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				318A0405258B528B009613B5 /* ImageFactory.swift */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
 		3194F6902577FFC300FA6398 /* Asseblies */ = {
 			isa = PBXGroup;
 			children = (
 				3194F6912577FFFF00FA6398 /* ApolloAssembly.swift */,
 				3194F6952578000A00FA6398 /* ViewControllersAssembly.swift */,
+				318A0407258B5B8C009613B5 /* FactoryAssembly.swift */,
 			);
 			path = Asseblies;
 			sourceTree = "<group>";
@@ -326,8 +340,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3150E7952578FCEF007EB537 /* Roboto-Regular.ttf in Resources */,
 				31D04935256FE998005C82B2 /* schema.json in Resources */,
+				316697DB258A1FDB008DB420 /* Roboto-Regular.ttf in Resources */,
 				31D04938256FE9B4005C82B2 /* Queries.graphql in Resources */,
 				048D0354256B9237006FE35B /* LaunchScreen.storyboard in Resources */,
 				048D0351256B9237006FE35B /* Assets.xcassets in Resources */,
@@ -365,6 +379,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				316697D6258A0E1C008DB420 /* API.swift in Sources */,
 				31080E092587EA7900255484 /* NewColor.swift in Sources */,
 				31510C2C2576686B00780ECD /* Country.swift in Sources */,
 				3194F6962578000A00FA6398 /* ViewControllersAssembly.swift in Sources */,
@@ -379,7 +394,8 @@
 				3114B0EF2577A5D1009BAB2C /* CountriesListViewModel.swift in Sources */,
 				3114B0F32577A62B009BAB2C /* CountryCollectionViewCellViewModel.swift in Sources */,
 				3194F6892577BA8C00FA6398 /* CountriesListViewController.swift in Sources */,
-				31510C302576862700780ECD /* API.swift in Sources */,
+				318A0406258B528B009613B5 /* ImageFactory.swift in Sources */,
+				318A0408258B5B8C009613B5 /* FactoryAssembly.swift in Sources */,
 				313B2EF62583952900BEA636 /* ShowAllViewModel.swift in Sources */,
 				31543632257E64B90079CDA6 /* Constants.swift in Sources */,
 				31B33383257F88A8000A8673 /* CountryDetailsViewController.swift in Sources */,
@@ -547,7 +563,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.swift.Countries-Info";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -570,7 +586,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.swift.Countries-Info";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

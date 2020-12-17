@@ -58,4 +58,10 @@ struct NameConstants {
     static let showAllViewControllerId = "ShowAllViewController"
     //Name of storyboard
     static let storyboardId = "Main"
+    //First part images url for flags
+    static let imageURL = "https://flagpedia.net/data/flags/normal/"
+    //Image extension for flags
+    static let imageExtension = ".png"
+    //Name of unknown flag image
+    static let unknownFlagImage = "unknownFlag"
 }
