@@ -10,7 +10,7 @@ import Combine
 
 protocol CountriesListViewModelProtocol {
     var countriesPublisher: Published<[Country]>.Publisher { get }
-    var countries: [Country] { get }
+    var countries: [Country] { get set }
     
     func numberOfItem() -> Int
     func cellViewModel(indexPath: IndexPath) -> CountryCollectionViewCellViewModelProtocol?
