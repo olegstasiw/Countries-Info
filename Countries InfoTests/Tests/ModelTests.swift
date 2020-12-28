@@ -58,4 +58,8 @@ class ModelTests: XCTestCase {
         let data = try? encoder.encode(model)
         XCTAssertNotNil(data)
     }
+    
+    
 }
+
+

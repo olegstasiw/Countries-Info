@@ -28,7 +28,7 @@ class CountryDetailsTests: XCTestCase {
         sut = nil
     }
     
-    func makeRootViewController() {
+    private func makeRootViewController() {
         let keyWindow = UIApplication.shared.connectedScenes
             .filter({$0.activationState == .foregroundActive})
             .map({$0 as? UIWindowScene})
@@ -38,7 +38,7 @@ class CountryDetailsTests: XCTestCase {
         keyWindow?.rootViewController = sut
     }
     
-    func returnShowAllScreen() -> ShowAllViewController {
+    private func returnShowAllScreen() -> ShowAllViewController {
         guard let controller = sut.presentedViewController as? ShowAllViewController else { return ShowAllViewController()}
         return controller
     }

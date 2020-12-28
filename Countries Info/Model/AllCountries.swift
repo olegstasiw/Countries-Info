@@ -13,6 +13,7 @@ struct AllCountries: Codable {
         case country = "Country"
     }
     
+    //Init is intended only for tests
     init(country: [Country]) {
         self.country = country
     }

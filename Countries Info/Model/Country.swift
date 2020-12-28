@@ -22,7 +22,7 @@ struct Country: Codable {
         case name, capital, population, currencies, officialLanguages, timezones, callingCodes, subregion, alpha2Code
     }
     
-    
+    //Init is intended only for tests
     init(name: String, capital: String, population: Double, currencies: [Currencie], officialLanguages: [OfficialLanguage], timezones: [Timezone], callingCodes: [CallingCode], alpha2Code: String, subregion: Subregion?) {
         self.name = name
         self.capital = capital
@@ -69,6 +69,7 @@ struct Currencie: Codable {
         case name
     }
     
+    //Init is intended only for tests
     init(name: String) {
         self.name = name
     }
@@ -91,6 +92,7 @@ struct OfficialLanguage: Codable {
         case name
     }
     
+    //Init is intended only for tests
     init(name: String) {
         self.name = name
     }
@@ -113,6 +115,7 @@ struct Timezone: Codable {
         case name
     }
     
+    //Init is intended only for tests
     init(name: String) {
         self.name = name
     }
@@ -135,6 +138,7 @@ struct CallingCode: Codable {
         case name
     }
     
+    //Init is intended only for tests
     init(name: String) {
         self.name = name
     }
@@ -157,6 +161,7 @@ struct Subregion: Codable {
         case region
     }
     
+    //Init is intended only for tests
     init(region: Region) {
         self.region = region
     }
@@ -178,6 +183,7 @@ struct Region: Codable {
         case name
     }
     
+    //Init is intended only for tests
     init(name: String) {
         self.name = name
     }

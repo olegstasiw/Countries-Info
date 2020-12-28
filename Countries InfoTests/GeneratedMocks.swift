@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: Countries Info/Factories/ImageFactory.swift at 2020-12-23 17:38:07 +0000
+// MARK: - Mocks generated from file: Countries Info/Factories/ImageFactory.swift at 2020-12-24 15:37:01 +0000
 
 //
 //  ImageFactory.swift
@@ -194,7 +194,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Countries Info/Managers/ApolloManager.swift at 2020-12-23 17:38:07 +0000
+// MARK: - Mocks generated from file: Countries Info/Managers/ApolloManager.swift at 2020-12-24 15:37:01 +0000
 
 //
 //  ApolloManager.swift
