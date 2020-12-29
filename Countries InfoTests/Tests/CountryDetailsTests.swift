@@ -43,43 +43,6 @@ class CountryDetailsTests: XCTestCase {
         return controller
     }
     
-    func testImageDataFromNetworkWhenDataIsNotCorrect()  {
-        
-        let expectation = self.expectation(description: "This worked")
-        let img = ImageFactory()
-        
-        sut.factory = img
-        sut.loadViewIfNeeded()
-    
-        DispatchQueue.main.async {
-            XCTAssertNotNil(self.sut.flagImageView.image)
-            XCTAssertEqual(self.sut.flagImageView.image, UIImage(named: NameConstants.unknownFlagImage))
-            expectation.fulfill()
-        }
-  
-        waitForExpectations(timeout: 10, handler: nil)
-        XCTAssertNotNil(img)
-    }
-    func testImageDataFromNetworkWhenDataIsCorrect()  {
-    
-        let expectation = self.expectation(description: "This worked")
-        sut.viewModel = CountryDetailsViewModel(country: Country(name: "", capital: "", population: 0, currencies: [], officialLanguages: [], timezones: [], callingCodes: [], alpha2Code: "br", subregion: nil))
-        let img = ImageFactory()
-        
-        sut.factory = img
-        sut.loadViewIfNeeded()
-    
-        img.imageGenerator(code: "br") { (data) in
-            DispatchQueue.main.async {
-                XCTAssertNotNil(self.sut.flagImageView.image)
-                expectation.fulfill()
-            }
-        }
-
-        waitForExpectations(timeout: 10, handler: nil)
-        XCTAssertNotNil(img)
-    }
-    
     func testBackButtonCallPopViewController() {
         sut.loadViewIfNeeded()
         let mockNavigationController = MockNavigationController(rootViewController: sut)
