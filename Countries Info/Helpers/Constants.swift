@@ -64,4 +64,6 @@ struct NameConstants {
     static let imageExtension = ".png"
     //Name of unknown flag image
     static let unknownFlagImage = "unknownFlag"
+    //Long Name for labels
+    static let longName = "Test_test_test_test_test_test_test_test_test_test"
 }

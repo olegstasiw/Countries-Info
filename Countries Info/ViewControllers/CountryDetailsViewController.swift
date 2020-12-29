@@ -41,7 +41,7 @@ class CountryDetailsViewController: UIViewController {
         setValue(allResults: viewModel.timeZones, stack: timesZonesStack, color: #colorLiteral(red: 0.7254901961, green: 0.9176470588, blue: 0.7647058824, alpha: 1), buttonType: TimeZonesButton.self)
         setValue(allResults: viewModel.callingCodes, stack: callingCodesStack, color: #colorLiteral(red: 0.6509803922, green: 0.9019607843, blue: 0.9921568627, alpha: 1), buttonType: CallingCodesButton.self)
         
-        DispatchQueue.global().async {
+        
             self.factory?.imageGenerator(code: self.viewModel.alpha2Code) { (data) in
                 DispatchQueue.main.async {
                     if let imageData = data {
@@ -52,7 +52,7 @@ class CountryDetailsViewController: UIViewController {
                 }
             }
         }
-    }
+    
     
     private func setUI() {
         addBackButton()
@@ -154,13 +154,13 @@ class CountryDetailsViewController: UIViewController {
     }
     
     private func addBackButton() {
-        let btnLeftMenu: UIButton = UIButton()
         let image = UIImage(named: NameConstants.backImage)
-        btnLeftMenu.setImage(image, for: .normal)
-        btnLeftMenu.sizeToFit()
-        btnLeftMenu.addTarget(self, action: #selector (backButtonClick), for: .touchUpInside)
-        let barButton = UIBarButtonItem(customView: btnLeftMenu)
+        let barButton = UIBarButtonItem(image: image,
+                                        style: .plain,
+                                        target: self,
+                                        action: #selector (backButtonClick))
         self.navigationItem.leftBarButtonItem = barButton
+        navigationController?.navigationBar.tintColor = .black
     }
     
     @objc private func backButtonClick() {

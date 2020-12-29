@@ -22,6 +22,19 @@ struct Country: Codable {
         case name, capital, population, currencies, officialLanguages, timezones, callingCodes, subregion, alpha2Code
     }
     
+    //Init is intended only for tests
+    init(name: String, capital: String, population: Double, currencies: [Currencie], officialLanguages: [OfficialLanguage], timezones: [Timezone], callingCodes: [CallingCode], alpha2Code: String, subregion: Subregion?) {
+        self.name = name
+        self.capital = capital
+        self.population = population
+        self.currencies = currencies
+        self.officialLanguages = officialLanguages
+        self.timezones = timezones
+        self.callingCodes = callingCodes
+        self.alpha2Code = alpha2Code
+        self.subregion = subregion
+    }
+    
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         name = try container.decode(String.self, forKey: .name)
@@ -56,6 +69,11 @@ struct Currencie: Codable {
         case name
     }
     
+    //Init is intended only for tests
+    init(name: String) {
+        self.name = name
+    }
+    
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         name = try container.decode(String.self, forKey: .name)
@@ -72,6 +90,11 @@ struct OfficialLanguage: Codable {
     
     private enum CodingKeys: String, CodingKey {
         case name
+    }
+    
+    //Init is intended only for tests
+    init(name: String) {
+        self.name = name
     }
     
     public init(from decoder: Decoder) throws {
@@ -92,6 +115,11 @@ struct Timezone: Codable {
         case name
     }
     
+    //Init is intended only for tests
+    init(name: String) {
+        self.name = name
+    }
+    
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         name = try container.decode(String.self, forKey: .name)
@@ -108,6 +136,11 @@ struct CallingCode: Codable {
     
     private enum CodingKeys: String, CodingKey {
         case name
+    }
+    
+    //Init is intended only for tests
+    init(name: String) {
+        self.name = name
     }
     
     public init(from decoder: Decoder) throws {
@@ -128,6 +161,10 @@ struct Subregion: Codable {
         case region
     }
     
+    //Init is intended only for tests
+    init(region: Region) {
+        self.region = region
+    }
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         region = try container.decode(Region.self, forKey: .region)
@@ -144,6 +181,11 @@ struct Region: Codable {
     
     private enum CodingKeys: String, CodingKey {
         case name
+    }
+    
+    //Init is intended only for tests
+    init(name: String) {
+        self.name = name
     }
     
     public init(from decoder: Decoder) throws {

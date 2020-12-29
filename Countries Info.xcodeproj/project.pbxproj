@@ -15,6 +15,13 @@
 		3114B0EC2577A5B6009BAB2C /* DependecyInjectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3114B0EB2577A5B6009BAB2C /* DependecyInjectionManager.swift */; };
 		3114B0EF2577A5D1009BAB2C /* CountriesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3114B0EE2577A5D1009BAB2C /* CountriesListViewModel.swift */; };
 		3114B0F32577A62B009BAB2C /* CountryCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3114B0F22577A62B009BAB2C /* CountryCollectionViewCellViewModel.swift */; };
+		31266E182593525300474F76 /* ShowAllViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31266E172593525300474F76 /* ShowAllViewControllerTests.swift */; };
+		31266E1E25935D7E00474F76 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31266E1D25935D7E00474F76 /* API.swift */; };
+		31266E2825936B7D00474F76 /* MockNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31266E2725936B7D00474F76 /* MockNavigationController.swift */; };
+		312D1C7C259225D800612AE8 /* CountryDetailsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312D1C7B259225D800612AE8 /* CountryDetailsTests.swift */; };
+		313A14972590A12800C6C1DB /* Cuckoo in Frameworks */ = {isa = PBXBuildFile; productRef = 313A14962590A12800C6C1DB /* Cuckoo */; };
+		313A14AA2590A24C00C6C1DB /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313A14A92590A24C00C6C1DB /* GeneratedMocks.swift */; };
+		313A14AF2590A45500C6C1DB /* CountriesListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313A14AE2590A45500C6C1DB /* CountriesListViewControllerTests.swift */; };
 		313B2EF42583819B00BEA636 /* ShowAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313B2EF32583819B00BEA636 /* ShowAllViewController.swift */; };
 		313B2EF62583952900BEA636 /* ShowAllViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313B2EF52583952900BEA636 /* ShowAllViewModel.swift */; };
 		3147266A25836E6000F2238D /* Double + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3147266925836E6000F2238D /* Double + Extension.swift */; };
@@ -23,13 +30,18 @@
 		315D49CD2579108800CADFC8 /* CountryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315D49CB2579108800CADFC8 /* CountryViewCell.swift */; };
 		315D49CE2579108800CADFC8 /* CountryViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 315D49CC2579108800CADFC8 /* CountryViewCell.xib */; };
 		316662032577A16100FBD84F /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 316662022577A16100FBD84F /* Swinject */; };
-		316697D6258A0E1C008DB420 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316697D5258A0E1C008DB420 /* API.swift */; };
 		316697DB258A1FDB008DB420 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 316697D9258A1E96008DB420 /* Roboto-Regular.ttf */; };
 		318A0406258B528B009613B5 /* ImageFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318A0405258B528B009613B5 /* ImageFactory.swift */; };
 		318A0408258B5B8C009613B5 /* FactoryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318A0407258B5B8C009613B5 /* FactoryAssembly.swift */; };
 		3194F6892577BA8C00FA6398 /* CountriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194F6882577BA8C00FA6398 /* CountriesListViewController.swift */; };
 		3194F6922577FFFF00FA6398 /* ApolloAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194F6912577FFFF00FA6398 /* ApolloAssembly.swift */; };
 		3194F6962578000A00FA6398 /* ViewControllersAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3194F6952578000A00FA6398 /* ViewControllersAssembly.swift */; };
+		319BBD7025936D3D0030FF87 /* MockPushNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319BBD6F25936D3D0030FF87 /* MockPushNavigationController.swift */; };
+		319BBD7625936D720030FF87 /* MockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319BBD7525936D720030FF87 /* MockViewController.swift */; };
+		319BBD7A25936DD60030FF87 /* ApolloManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319BBD7925936DD60030FF87 /* ApolloManagerMock.swift */; };
+		319BBD7E25936F370030FF87 /* ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319BBD7D25936F370030FF87 /* ModelTests.swift */; };
+		319BBD8125936FC60030FF87 /* PaddingLabelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319BBD8025936FC60030FF87 /* PaddingLabelTests.swift */; };
+		319BBD842593705B0030FF87 /* CountryDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319BBD832593705B0030FF87 /* CountryDetailsViewModelTests.swift */; };
 		31B33383257F88A8000A8673 /* CountryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B33382257F88A8000A8673 /* CountryDetailsViewController.swift */; };
 		31B33387257F8906000A8673 /* CountryDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B33386257F8906000A8673 /* CountryDetailsViewModel.swift */; };
 		31C8E08F257D4ED700415139 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C8E08E257D4ED700415139 /* UIView + Extension.swift */; };
@@ -38,9 +50,21 @@
 		31D04938256FE9B4005C82B2 /* Queries.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 31D04937256FE9B4005C82B2 /* Queries.graphql */; };
 		31D0494C256FF21C005C82B2 /* ApolloManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D0494B256FF21C005C82B2 /* ApolloManager.swift */; };
 		31D04951256FF417005C82B2 /* AllCountries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D04950256FF417005C82B2 /* AllCountries.swift */; };
+		31E0EAB9259B6DD400518E22 /* ApolloManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E0EAB8259B6DD400518E22 /* ApolloManagerTests.swift */; };
+		31E0EABC259B6E7300518E22 /* ImageFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E0EABB259B6E7300518E22 /* ImageFactoryTests.swift */; };
 		31FB19E8258370890048DB7C /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FB19E7258370890048DB7C /* PaddingLabel.swift */; };
 		31FB19EA258370CD0048DB7C /* HelpersButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FB19E9258370CD0048DB7C /* HelpersButtons.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		313A14A22590A20800C6C1DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 048D033C256B9234006FE35B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 048D0343256B9235006FE35B;
+			remoteInfo = "Countries Info";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		31AEEAB42579582800313184 /* Embed Frameworks */ = {
@@ -66,6 +90,14 @@
 		3114B0EB2577A5B6009BAB2C /* DependecyInjectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependecyInjectionManager.swift; sourceTree = "<group>"; };
 		3114B0EE2577A5D1009BAB2C /* CountriesListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountriesListViewModel.swift; sourceTree = "<group>"; };
 		3114B0F22577A62B009BAB2C /* CountryCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		31266E172593525300474F76 /* ShowAllViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAllViewControllerTests.swift; sourceTree = "<group>"; };
+		31266E1D25935D7E00474F76 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		31266E2725936B7D00474F76 /* MockNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNavigationController.swift; sourceTree = "<group>"; };
+		312D1C7B259225D800612AE8 /* CountryDetailsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailsTests.swift; sourceTree = "<group>"; };
+		313A149D2590A20800C6C1DB /* Countries InfoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Countries InfoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		313A14A12590A20800C6C1DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		313A14A92590A24C00C6C1DB /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
+		313A14AE2590A45500C6C1DB /* CountriesListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListViewControllerTests.swift; sourceTree = "<group>"; };
 		313B2EF32583819B00BEA636 /* ShowAllViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAllViewController.swift; sourceTree = "<group>"; };
 		313B2EF52583952900BEA636 /* ShowAllViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAllViewModel.swift; sourceTree = "<group>"; };
 		3147266925836E6000F2238D /* Double + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double + Extension.swift"; sourceTree = "<group>"; };
@@ -73,7 +105,6 @@
 		31543631257E64B90079CDA6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		315D49CB2579108800CADFC8 /* CountryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewCell.swift; sourceTree = "<group>"; };
 		315D49CC2579108800CADFC8 /* CountryViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryViewCell.xib; sourceTree = "<group>"; };
-		316697D5258A0E1C008DB420 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		316697D9258A1E96008DB420 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		316697DA258A1E9B008DB420 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		318A0405258B528B009613B5 /* ImageFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFactory.swift; sourceTree = "<group>"; };
@@ -81,6 +112,12 @@
 		3194F6882577BA8C00FA6398 /* CountriesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListViewController.swift; sourceTree = "<group>"; };
 		3194F6912577FFFF00FA6398 /* ApolloAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloAssembly.swift; sourceTree = "<group>"; };
 		3194F6952578000A00FA6398 /* ViewControllersAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllersAssembly.swift; sourceTree = "<group>"; };
+		319BBD6F25936D3D0030FF87 /* MockPushNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPushNavigationController.swift; sourceTree = "<group>"; };
+		319BBD7525936D720030FF87 /* MockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewController.swift; sourceTree = "<group>"; };
+		319BBD7925936DD60030FF87 /* ApolloManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloManagerMock.swift; sourceTree = "<group>"; };
+		319BBD7D25936F370030FF87 /* ModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTests.swift; sourceTree = "<group>"; };
+		319BBD8025936FC60030FF87 /* PaddingLabelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabelTests.swift; sourceTree = "<group>"; };
+		319BBD832593705B0030FF87 /* CountryDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailsViewModelTests.swift; sourceTree = "<group>"; };
 		31B33382257F88A8000A8673 /* CountryDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailsViewController.swift; sourceTree = "<group>"; };
 		31B33386257F8906000A8673 /* CountryDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailsViewModel.swift; sourceTree = "<group>"; };
 		31C8E08E257D4ED700415139 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
@@ -88,6 +125,8 @@
 		31D04937256FE9B4005C82B2 /* Queries.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Queries.graphql; sourceTree = "<group>"; };
 		31D0494B256FF21C005C82B2 /* ApolloManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloManager.swift; sourceTree = "<group>"; };
 		31D04950256FF417005C82B2 /* AllCountries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCountries.swift; sourceTree = "<group>"; };
+		31E0EAB8259B6DD400518E22 /* ApolloManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloManagerTests.swift; sourceTree = "<group>"; };
+		31E0EABB259B6E7300518E22 /* ImageFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFactoryTests.swift; sourceTree = "<group>"; };
 		31FB19E7258370890048DB7C /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		31FB19E9258370CD0048DB7C /* HelpersButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpersButtons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,6 +138,14 @@
 			files = (
 				31D04932256FE8E2005C82B2 /* Apollo in Frameworks */,
 				316662032577A16100FBD84F /* Swinject in Frameworks */,
+				313A14972590A12800C6C1DB /* Cuckoo in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		313A149A2590A20800C6C1DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				048D0346256B9235006FE35B /* Countries Info */,
+				313A149E2590A20800C6C1DB /* Countries InfoTests */,
 				048D0345256B9235006FE35B /* Products */,
 				31AEEA982579548C00313184 /* Frameworks */,
 			);
@@ -118,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				048D0344256B9235006FE35B /* Countries Info.app */,
+				313A149D2590A20800C6C1DB /* Countries InfoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,6 +188,43 @@
 				31D04934256FE998005C82B2 /* schema.json */,
 			);
 			path = "Countries Info";
+			sourceTree = "<group>";
+		};
+		31266E2125936B0A00474F76 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				31266E2725936B7D00474F76 /* MockNavigationController.swift */,
+				319BBD6F25936D3D0030FF87 /* MockPushNavigationController.swift */,
+				319BBD7525936D720030FF87 /* MockViewController.swift */,
+				319BBD7925936DD60030FF87 /* ApolloManagerMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		313A149E2590A20800C6C1DB /* Countries InfoTests */ = {
+			isa = PBXGroup;
+			children = (
+				31266E2125936B0A00474F76 /* Mocks */,
+				313A14AD2590A41A00C6C1DB /* Tests */,
+				313A14A92590A24C00C6C1DB /* GeneratedMocks.swift */,
+				313A14A12590A20800C6C1DB /* Info.plist */,
+			);
+			path = "Countries InfoTests";
+			sourceTree = "<group>";
+		};
+		313A14AD2590A41A00C6C1DB /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				313A14AE2590A45500C6C1DB /* CountriesListViewControllerTests.swift */,
+				312D1C7B259225D800612AE8 /* CountryDetailsTests.swift */,
+				319BBD832593705B0030FF87 /* CountryDetailsViewModelTests.swift */,
+				31266E172593525300474F76 /* ShowAllViewControllerTests.swift */,
+				319BBD7D25936F370030FF87 /* ModelTests.swift */,
+				319BBD8025936FC60030FF87 /* PaddingLabelTests.swift */,
+				31E0EAB8259B6DD400518E22 /* ApolloManagerTests.swift */,
+				31E0EABB259B6E7300518E22 /* ImageFactoryTests.swift */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		3147266825836E2300F2238D /* Helpers */ = {
@@ -172,7 +258,7 @@
 		31510C242576668F00780ECD /* AllCountriesQuery */ = {
 			isa = PBXGroup;
 			children = (
-				316697D5258A0E1C008DB420 /* API.swift */,
+				31266E1D25935D7E00474F76 /* API.swift */,
 				31D04937256FE9B4005C82B2 /* Queries.graphql */,
 			);
 			path = AllCountriesQuery;
@@ -281,6 +367,7 @@
 			buildConfigurationList = 048D0358256B9237006FE35B /* Build configuration list for PBXNativeTarget "Countries Info" */;
 			buildPhases = (
 				31D0493A256FEA06005C82B2 /* Generate Apollo GraphQL API */,
+				313A14982590A19500C6C1DB /* ShellScript */,
 				048D0340256B9235006FE35B /* Sources */,
 				048D0341256B9235006FE35B /* Frameworks */,
 				048D0342256B9235006FE35B /* Resources */,
@@ -294,10 +381,29 @@
 			packageProductDependencies = (
 				31D04931256FE8E2005C82B2 /* Apollo */,
 				316662022577A16100FBD84F /* Swinject */,
+				313A14962590A12800C6C1DB /* Cuckoo */,
 			);
 			productName = "Countries Info";
 			productReference = 048D0344256B9235006FE35B /* Countries Info.app */;
 			productType = "com.apple.product-type.application";
+		};
+		313A149C2590A20800C6C1DB /* Countries InfoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 313A14A42590A20800C6C1DB /* Build configuration list for PBXNativeTarget "Countries InfoTests" */;
+			buildPhases = (
+				313A14992590A20800C6C1DB /* Sources */,
+				313A149A2590A20800C6C1DB /* Frameworks */,
+				313A149B2590A20800C6C1DB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				313A14A32590A20800C6C1DB /* PBXTargetDependency */,
+			);
+			name = "Countries InfoTests";
+			productName = "Countries InfoTests";
+			productReference = 313A149D2590A20800C6C1DB /* Countries InfoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -310,6 +416,10 @@
 				TargetAttributes = {
 					048D0343256B9235006FE35B = {
 						CreatedOnToolsVersion = 12.2;
+					};
+					313A149C2590A20800C6C1DB = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 048D0343256B9235006FE35B;
 					};
 				};
 			};
@@ -325,12 +435,14 @@
 			packageReferences = (
 				31D04930256FE8E2005C82B2 /* XCRemoteSwiftPackageReference "apollo-ios" */,
 				316662012577A16100FBD84F /* XCRemoteSwiftPackageReference "Swinject" */,
+				313A14952590A12800C6C1DB /* XCRemoteSwiftPackageReference "Cuckoo" */,
 			);
 			productRefGroup = 048D0345256B9235006FE35B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				048D0343256B9235006FE35B /* Countries Info */,
+				313A149C2590A20800C6C1DB /* Countries InfoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -350,9 +462,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		313A149B2590A20800C6C1DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		313A14982590A19500C6C1DB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Define output file. Change \"${PROJECT_DIR}/${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"${PROJECT_DIR}/${PROJECT_NAME}Tests/GeneratedMocks.swift\"\necho \"Generated Mocks File = ${OUTPUT_FILE}\"\n\n# Define input directory. Change \"${PROJECT_DIR}/${PROJECT_NAME}\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"${PROJECT_DIR}/${PROJECT_NAME}\"\necho \"Mocks Input Directory = ${INPUT_DIR}\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n\"${PROJECT_DIR}/run\" --download generate --testable \"${PROJECT_NAME}\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"${INPUT_DIR}/Factories/ImageFactory.swift\" \\\n\"${INPUT_DIR}/Managers/ApolloManager.swift\" \n# ... and so forth, the last line should never end with a backslash\n\n# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group.\n";
+		};
 		31D0493A256FEA06005C82B2 /* Generate Apollo GraphQL API */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -379,7 +515,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				316697D6258A0E1C008DB420 /* API.swift in Sources */,
 				31080E092587EA7900255484 /* NewColor.swift in Sources */,
 				31510C2C2576686B00780ECD /* Country.swift in Sources */,
 				3194F6962578000A00FA6398 /* ViewControllersAssembly.swift in Sources */,
@@ -402,11 +537,40 @@
 				3114B0EC2577A5B6009BAB2C /* DependecyInjectionManager.swift in Sources */,
 				31B33387257F8906000A8673 /* CountryDetailsViewModel.swift in Sources */,
 				3147266A25836E6000F2238D /* Double + Extension.swift in Sources */,
+				31266E1E25935D7E00474F76 /* API.swift in Sources */,
 				31C8E08F257D4ED700415139 /* UIView + Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		313A14992590A20800C6C1DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				319BBD7E25936F370030FF87 /* ModelTests.swift in Sources */,
+				312D1C7C259225D800612AE8 /* CountryDetailsTests.swift in Sources */,
+				31266E2825936B7D00474F76 /* MockNavigationController.swift in Sources */,
+				313A14AA2590A24C00C6C1DB /* GeneratedMocks.swift in Sources */,
+				31E0EAB9259B6DD400518E22 /* ApolloManagerTests.swift in Sources */,
+				31E0EABC259B6E7300518E22 /* ImageFactoryTests.swift in Sources */,
+				319BBD8125936FC60030FF87 /* PaddingLabelTests.swift in Sources */,
+				319BBD7625936D720030FF87 /* MockViewController.swift in Sources */,
+				319BBD7025936D3D0030FF87 /* MockPushNavigationController.swift in Sources */,
+				31266E182593525300474F76 /* ShowAllViewControllerTests.swift in Sources */,
+				319BBD7A25936DD60030FF87 /* ApolloManagerMock.swift in Sources */,
+				313A14AF2590A45500C6C1DB /* CountriesListViewControllerTests.swift in Sources */,
+				319BBD842593705B0030FF87 /* CountryDetailsViewModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		313A14A32590A20800C6C1DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 048D0343256B9235006FE35B /* Countries Info */;
+			targetProxy = 313A14A22590A20800C6C1DB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		048D034D256B9235006FE35B /* Main.storyboard */ = {
@@ -551,6 +715,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9964CXZHWZ;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -574,6 +739,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9964CXZHWZ;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -587,6 +753,46 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		313A14A52590A20800C6C1DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9964CXZHWZ;
+				INFOPLIST_FILE = "Countries InfoTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "olegstasiw.Countries-InfoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Countries Info.app/Countries Info";
+			};
+			name = Debug;
+		};
+		313A14A62590A20800C6C1DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9964CXZHWZ;
+				INFOPLIST_FILE = "Countries InfoTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "olegstasiw.Countries-InfoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Countries Info.app/Countries Info";
 			};
 			name = Release;
 		};
@@ -611,9 +817,26 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		313A14A42590A20800C6C1DB /* Build configuration list for PBXNativeTarget "Countries InfoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				313A14A52590A20800C6C1DB /* Debug */,
+				313A14A62590A20800C6C1DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		313A14952590A12800C6C1DB /* XCRemoteSwiftPackageReference "Cuckoo" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Brightify/Cuckoo.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.1;
+			};
+		};
 		316662012577A16100FBD84F /* XCRemoteSwiftPackageReference "Swinject" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Swinject/Swinject.git";
@@ -633,6 +856,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		313A14962590A12800C6C1DB /* Cuckoo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 313A14952590A12800C6C1DB /* XCRemoteSwiftPackageReference "Cuckoo" */;
+			productName = Cuckoo;
+		};
 		316662022577A16100FBD84F /* Swinject */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 316662012577A16100FBD84F /* XCRemoteSwiftPackageReference "Swinject" */;

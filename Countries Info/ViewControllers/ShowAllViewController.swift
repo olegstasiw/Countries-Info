@@ -77,7 +77,7 @@ class ShowAllViewController: UIViewController {
         label.layer.cornerRadius = label.intrinsicContentSize.height / 2
     }
     
-    @IBAction func closeBunntonPress() {
+    @IBAction func closeButtonPress() {
         dismiss(animated: true)
     }
 }

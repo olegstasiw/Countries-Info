@@ -81,26 +81,31 @@ class CountryDetailsViewModel: CountryDetailsViewModelProtocol {
             timeZone.removeSubrange(utc)
             if let plus = timeZone.range(of: "+") {
                 timeZone.removeSubrange(plus)
-                let date = formatter.date(from: timeZone)
-                timeZone = "GMT + \(formatter.string(from: date ?? Date()))"
+                guard  let date = formatter.date(from: timeZone) else {
+                    return "GMT + 0"
+                }
+                timeZone = "GMT + \(formatter.string(from: date))"
                 return timeZone
             } else if let minus = timeZone.range(of: "-") {
                 timeZone.removeSubrange(minus)
-                let date = formatter.date(from: timeZone)
-                timeZone = "GMT - \(formatter.string(from: date ?? Date()))"
+                guard  let date = formatter.date(from: timeZone) else {
+                    return "GMT + 0"
+                }
+                timeZone = "GMT - \(formatter.string(from: date))"
                 return timeZone
-            } else if timeZone.isEmpty {
-                timeZone = "GMT + 0"
-                return timeZone
+                
+            } else {
+                return "GMT + 0"
             }
         }
+        timeZone = "GMT + 0"
         return timeZone
     }
     
     
     private func setPoputation(population: Double) -> String {
         var number = population
-        if population > StaticValueConstants.million {
+        if population >= StaticValueConstants.million {
             number /= StaticValueConstants.million
             let str = String(number.rounded(toPlaces: 2)) + " m"
             return str.replacingOccurrences(of: ".", with: ",")
@@ -111,6 +116,4 @@ class CountryDetailsViewModel: CountryDetailsViewModelProtocol {
             return str.replacingOccurrences(of: ".", with: ",")
         }
     }
-    
-    
 }
