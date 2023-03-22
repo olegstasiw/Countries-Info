@@ -69,7 +69,6 @@ class CountriesListViewController: UIViewController {
     
     private func moveToViewController(at indexPath: IndexPath) {
         let detailVC = DependecyInjectionManager.shared.assembler.resolver.resolve(CountryDetailsViewController.self)!
-        detailVC.factory = DependecyInjectionManager.shared.assembler.resolver.resolve(ImageFactoryProtocol.self)
         detailVC.viewModel = CountryDetailsViewModel(country: viewModel.countries[indexPath.row])
         navigationController?.pushViewController(detailVC, animated: true)
     }

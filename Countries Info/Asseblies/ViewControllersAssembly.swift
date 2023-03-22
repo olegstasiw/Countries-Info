@@ -17,9 +17,10 @@ class ViewControllersAssembly: Assembly {
             return controller
         }
         
-        container.register(CountryDetailsViewController.self) { _ in
+        container.register(CountryDetailsViewController.self) { r in
             let storyboard = UIStoryboard(name: NameConstants.storyboardId, bundle: nil)
             let controller = storyboard.instantiateViewController(withIdentifier: NameConstants.detailViewControllerId) as! CountryDetailsViewController
+            controller.factory = r.resolve(ImageFactoryProtocol.self)
             return controller
         }
         

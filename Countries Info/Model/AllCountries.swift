@@ -13,6 +13,11 @@ struct AllCountries: Codable {
         case country = "Country"
     }
     
+    //Init is intended only for tests
+    init(country: [Country]) {
+        self.country = country
+    }
+    
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         country = try container.decode([Country].self, forKey: .country).compactMap { $0 }
